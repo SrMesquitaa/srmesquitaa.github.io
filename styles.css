@@ -5,11 +5,13 @@
 }
 
 body {
-  background-image: url('media/background.jpg');
-  background-size: cover; 
-  background-position: center;
-  background-attachment: fixed;
+    height: 100vh; 
+    background-image: url('media/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 
 header {
   text-align: center;
