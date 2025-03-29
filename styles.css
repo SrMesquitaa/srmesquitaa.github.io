@@ -10,12 +10,14 @@ body {
 }
 
 #inicio {
-  background-color: white; 
+  background-image: url('media/backgroundcinza.jpg');
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
   text-align: center;
 }
 
