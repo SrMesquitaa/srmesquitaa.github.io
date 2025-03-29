@@ -1,4 +1,3 @@
-/* Resetando alguns estilos padrões do navegador */
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +5,10 @@
 }
 
 body {
-  background-image: url('media/background.jpg'); /* Caminho da imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
+  background-image: url('C:/Users/conta/OneDrive/Documentos/ESTUDO CODING/PORTFOLIO/SITE/media/background.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;
 }
 
 header {
@@ -19,7 +18,7 @@ header {
 
 header h1 {
   font-size: 3rem;
-  color: #EB3F3F;  /* cor do nome */
+  color: #EB3F3F;
   margin-bottom: 10px;
 }
 
@@ -49,7 +48,6 @@ nav ul li a:hover {
   color: #EB3F3F;
 }
 
-/* Seções do portfólio */
 section {
   margin-bottom: 40px;
 }
@@ -74,7 +72,6 @@ h2 {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito de Fade-in para as seções */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1.5s forwards;
@@ -86,7 +83,6 @@ h2 {
   }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   header h1 {
       font-size: 2.5rem;
