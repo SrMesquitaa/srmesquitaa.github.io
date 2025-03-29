@@ -1,0 +1,101 @@
+/* Resetando alguns estilos padrões do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #EB3F3F;  /* cor do nome */
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #EB3F3F;
+}
+
+/* Seções do portfólio */
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.projeto {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de Fade-in para as seções */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2.5rem;
+  }
+  header p {
+      font-size: 1.2rem;
+  }
+  h2 {
+      font-size: 2rem;
+  }
+}
