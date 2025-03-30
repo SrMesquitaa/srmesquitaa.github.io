@@ -138,6 +138,14 @@ h2 {
   margin-bottom: 20px;
 }
 
+#sobre h2 {
+  font-size: 2.5rem; 
+}
+
+#sobre p {
+  font-size: 1.8rem; 
+}
+
 #projetos {
   text-align: center;
   font-size: 1.5rem;
