@@ -6,13 +6,26 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-text: #616161;
+  --color-text-btn: #ffffff;
+  --card1-gradient-color1: #f12711;
+  --card1-gradient-color2: #f5af19;
+  --card2-gradient-color1: #7F00FF;
+  --card2-gradient-color2: #E100FF;
+  --card3-gradient-color1: #3f2b96;
+  --card3-gradient-color2: #a8c0ff;
+  --card4-gradient-color1: #11998e;
+  --card4-gradient-color2: #38ef7d;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
 
 #inicio {
-  background-image: url('media/backgroundcinza.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url('media/backgroundcinza.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -26,15 +39,16 @@ body {
 }
 
 #inicio .inicio-conteudo h1 {
-  font-size: 3rem;
   font-family: 'Coolvetica', sans-serif;
+  font-size: 3rem;
   margin-bottom: 10px;
-  color: #000; 
+  color: #000;
 }
 
 #inicio .inicio-conteudo p {
   font-size: 1.5rem;
-  color: #333;
+  color: rgba(255, 255, 255, 0.8); /* cor mais clara e com opacidade */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* sombra para melhorar contraste */
 }
 
 #inicio .intro-social {
@@ -42,7 +56,7 @@ body {
   padding: 0;
   margin-top: 20px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 #inicio .intro-social li {
@@ -61,7 +75,7 @@ body {
   color: #EB3F3F;
 }
 
-#sobre {
+#sobre, #contato {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 4.2rem;
@@ -69,24 +83,16 @@ body {
   margin-left: -30px;
 }
 
-#sobre h2 {
+#sobre h2, #contato h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-#sobre p {
+#sobre p, #contato p {
   font-size: 1.2rem;
   margin: 0 auto;
   max-width: 800px;
   line-height: 1.6;
-}
-
-#contato {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 4.2rem;
-  margin-right: -30px;
-  margin-left: -30px;
 }
 
 header {
@@ -207,11 +213,12 @@ h2 {
 
 .card-btn {
   border: none;
-  border-radius: 100px;
-  padding: 5px 30px;
+  border-radius: 50px; /* arredondamento mais suave */
+  padding: 8px 25px;
   color: #fff;
   margin-bottom: 15px;
   text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra leve */
 }
 
 .card-header.one {
@@ -252,7 +259,7 @@ h2 {
 }
 
 .titulo-nome {
-  font-family: 'Coolvetica', sans-serif; 
+  font-family: 'Coolvetica', sans-serif;
 }
 
 @keyframes fadeIn {
@@ -285,5 +292,18 @@ footer {
   }
   h2 {
       font-size: 2rem;
+  }
+
+  .card-wrap {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .titulo-projetos {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
   }
 }
