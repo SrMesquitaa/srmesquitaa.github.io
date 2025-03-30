@@ -28,6 +28,17 @@ body {
   background-attachment: scroll;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
 #inicio {
   height: 100vh;
   display: flex;
@@ -48,7 +59,7 @@ body {
 
 #inicio .inicio-conteudo p {
   font-size: 2.5rem;
-  color: rgba(255, 255, 255, 0.8); 
+  color: rgba(255, 255, 255, 0.8);
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -140,7 +151,7 @@ h2 {
 }
 
 #sobre h2 {
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
 }
 
 #sobre p {
@@ -219,12 +230,12 @@ h2 {
 
 .card-btn {
   border: none;
-  border-radius: 50px; /* arredondamento mais suave */
+  border-radius: 50px;
   padding: 8px 25px;
   color: #fff;
   margin-bottom: 15px;
   text-transform: uppercase;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra leve */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-header.one {
@@ -290,26 +301,48 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header h1 {
-      font-size: 2.5rem;
+  #inicio .inicio-conteudo h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
   }
-  header p {
-      font-size: 1.2rem;
-  }
-  h2 {
-      font-size: 2rem;
+  #inicio .inicio-conteudo p {
+    font-size: 1.8rem;
+    margin-top: 10px;
   }
 
   .card-wrap {
     width: 100%;
     margin: 15px 0;
+    box-shadow: none;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+  .card-btn {
+    padding: 6px 20px;
+    font-size: 0.9rem;
   }
 
   .titulo-projetos {
     font-size: 2rem;
   }
 
-  h2 {
-    font-size: 1.8rem;
+  #sobre h2, #contato h2 {
+    font-size: 2rem;
+  }
+  #sobre p, #contato p {
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 10px 0;
   }
 }
