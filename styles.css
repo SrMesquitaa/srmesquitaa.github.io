@@ -47,8 +47,8 @@ body {
 
 #inicio .inicio-conteudo p {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8); /* cor mais clara e com opacidade */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* sombra para melhorar contraste */
+  color: rgba(255, 255, 255, 0.8); 
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 #inicio .intro-social {
@@ -126,10 +126,6 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #EB3F3F;
 }
 
 section {
