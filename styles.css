@@ -22,13 +22,14 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-}
-
-#inicio {
   background-image: url('media/backgroundcinza.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#inicio {
   height: 100vh;
   display: flex;
   justify-content: center;
