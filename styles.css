@@ -40,8 +40,10 @@ body {
   list-style: none;
   padding: 0;
   margin-top: 20px;
-  
+  display: flex;
+  justify-content: center; 
 }
+
 
 #inicio .intro-social li {
   display: inline-block;
@@ -59,6 +61,14 @@ body {
   color: #EB3F3F;
 }
 
+#sobre {
+  text-align: center;
+}
+
+#sobre h2, #sobre p {
+  margin: 0 auto;
+  display: block;
+}
 
 header {
   text-align: center;
