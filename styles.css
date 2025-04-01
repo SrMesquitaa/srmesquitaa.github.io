@@ -91,8 +91,8 @@ body {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 4.2rem;
-  margin-right: -30px;
-  margin-left: -30px;
+  margin-right: 0 auto;
+  margin-left: 0 auto;
 }
 
 #sobre h2, #contato h2 {
@@ -163,8 +163,8 @@ h2 {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 4.2rem;
-  margin-right: -30px;
-  margin-left: -30px;
+  margin-right: 0 auto;
+  margin-left: 0 auto;
 }
 
 .titulo-projetos {
