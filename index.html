@@ -62,5 +62,25 @@
     <p>&copy; 2025 Leonardo Mesquita. Todos os direitos reservados.</p>
   </footer>
 
+  <div id="powerbi-container" style="display: none; padding: 20px;">
+    <iframe 
+      title="Power BI Report" 
+      width="100%" 
+      height="600px" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" 
+      frameborder="0" 
+      allowFullScreen="true">
+    </iframe>
+  </div>
+
+  <script>
+    document.querySelector('.card-btn.one').addEventListener('click', () => {
+      const container = document.getElementById('powerbi-container');
+      container.style.display = container.style.display === 'none' ? 'block' : 'none';
+      window.scrollTo({ top: container.offsetTop, behavior: 'smooth' });
+    });
+  </script>
+  
+  
 </body>
 </html>
