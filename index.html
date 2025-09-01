@@ -226,7 +226,7 @@
 
     document.querySelector('.card-btn.one').addEventListener('click', () => {
       carrosselContainer.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Previne scroll da página
+      document.body.style.overflow = 'hidden';
     });
 
     carrosselClose.addEventListener('click', () => {
@@ -256,6 +256,8 @@
       i18next.changeLanguage('en');
     }
 
+    updateCvLink(currentLang);
+
     langToggle.addEventListener('click', () => {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
 
@@ -270,6 +272,9 @@
 
       i18next.changeLanguage(currentLang);
       updateContent();
+
+    updateCvLink(currentLang);
+
 
       console.log(`Idioma alterado para: ${currentLang}`);
     });
