@@ -14,62 +14,66 @@
 -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonardo Mesquita | Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo Mesquita | Portfólio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
 
   <section id="inicio" class="inicio">
     <div class="inicio-conteudo">
       <h1 class="titulo-nome">Leonardo Mesquita</h1>
       <p>Analista de Dados | Power BI | Python </p>
-      
+
       <ul class="intro-social">
         <li><a href="mailto:contatoleonaardo@gmail.com"><i class="fas fa-envelope"></i></a></li>
         <li><a href="https://github.com/SrMesquitaa"><i class="fab fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/leonardo-mesquitaa/"><i class="fab fa-linkedin"></i></a></li>
-      </ul> 
+      </ul>
     </div>
   </section>
 
   <section id="sobre" class="fade-in">
     <h2>Sobre mim</h2>
-    <p>Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e o crescimento.</p>
+    <p>Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por
+      otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e
+      o crescimento.</p>
   </section>
 
   <section id="projetos" class="fade-in">
     <h2 class="titulo-projetos">Projetos</h2>
     <div class="card-wrap">
-        <div class="card-header one">
-            <i class="fas fa-chart-pie"></i>
-        </div>
-        <div class="card-content">
-            <div class="card-title">Dashboard Power BI</div>
-            <div class="card-text">Visualização interativa de dados para insights estratégicos.</div>
-            <button class="card-btn one">Ver mais</button>
-        </div>
+      <div class="card-header one">
+        <i class="fas fa-chart-pie"></i>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Dashboard Power BI</div>
+        <div class="card-text">Visualização interativa de dados para insights estratégicos.</div>
+        <button class="card-btn one">Ver mais</button>
+      </div>
     </div>
     <div class="card-wrap">
-        <div class="card-header two">
-            <i class="fas fa-cogs"></i>
-        </div>
-        <div class="card-content">
-            <div class="card-title">Automação com Python</div>
-            <div class="card-text">Scripts para otimizar processos e melhorar eficiência.</div>
-            <button class="card-btn two">Ver mais</button>
-        </div>
+      <div class="card-header two">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Automação com Python</div>
+        <div class="card-text">Scripts para otimizar processos e melhorar eficiência.</div>
+        <button class="card-btn two">Ver mais</button>
+      </div>
     </div>
-</section>
+  </section>
 
   <section id="contato" class="fade-in">
     <h2>Contato</h2>
     <p>Email: <a href="mailto:contatoleonaardo@gmail.com">contatoleonaardo@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/leonardo-mesquitaa/" aria-label="Perfil do LinkedIn">linkedin.com/in/leonardo-mesquitaa</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/leonardo-mesquitaa/"
+        aria-label="Perfil do LinkedIn">linkedin.com/in/leonardo-mesquitaa</a></p>
   </section>
 
   <footer>
@@ -77,24 +81,146 @@
   </footer>
 
   <div id="powerbi-container" style="display: none; padding: 20px;">
-    <iframe 
-      title="Power BI Report" 
-      width="100%" 
-      height="600px" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" 
-      frameborder="0" 
-      allowFullScreen="true">
+    <iframe title="Power BI Report" width="100%" height="600px"
+      src="https://app.powerbi.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9"
+      frameborder="0" allowFullScreen="true">
     </iframe>
   </div>
 
+  <!-- Carrossel de Projetos Power BI -->
+  <div id="carrossel-container" class="carrossel-overlay" style="display: none;">
+    <div class="carrossel-content">
+      <button class="carrossel-close">&times;</button>
+      <div class="carrossel-wrapper">
+        <div class="carrossel-slide active">
+          <div class="projeto-card">
+            <div class="projeto-imagem">
+              <img src="media/analise_gov.png" alt="Dashboard Análise de Sazonalidade" />
+            </div>
+            <div class="projeto-info">
+              <h3>Análise de Sazonalidade no Brasil</h3>
+              <p>Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros.
+                Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.</p>
+              <div class="projeto-tecnologias">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">DAX</span>
+                <span class="tech-tag">Análise Temporal</span>
+              </div>
+              <button class="projeto-btn"
+                onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')">Ver
+                Dashboard</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carrossel-slide">
+          <div class="projeto-card">
+            <div class="projeto-imagem">
+              <img src="media/analise_uber.png" alt="Dashboard Uber Performance" />
+            </div>
+            <div class="projeto-info">
+              <h3>Uber Performance</h3>
+              <p>Análise completa de performance da Uber, incluindo métricas de viagens, receita,
+                eficiência operacional e insights de negócio para otimização de estratégias.</p>
+              <div class="projeto-tecnologias">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Análise de Performance</span>
+                <span class="tech-tag">Métricas de Negócio</span>
+              </div>
+              <button class="projeto-btn"
+                onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')">Ver
+                Dashboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carrossel-nav">
+        <button class="carrossel-prev">&lt;</button>
+        <div class="carrossel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="carrossel-next">&gt;</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Controle do carrossel Power BI
+    const carrosselContainer = document.getElementById('carrossel-container');
+    const carrosselClose = document.querySelector('.carrossel-close');
+    const carrosselPrev = document.querySelector('.carrossel-prev');
+    const carrosselNext = document.querySelector('.carrossel-next');
+    const slides = document.querySelectorAll('.carrossel-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    // Abrir carrossel ao clicar em "Ver mais" no card Power BI
     document.querySelector('.card-btn.one').addEventListener('click', () => {
-      const container = document.getElementById('powerbi-container');
-      container.style.display = container.style.display === 'none' ? 'block' : 'none';
-      window.scrollTo({ top: container.offsetTop, behavior: 'smooth' });
+      carrosselContainer.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Previne scroll da página
+    });
+
+    // Fechar carrossel
+    carrosselClose.addEventListener('click', () => {
+      carrosselContainer.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Fechar ao clicar fora do carrossel
+    carrosselContainer.addEventListener('click', (e) => {
+      if (e.target === carrosselContainer) {
+        carrosselContainer.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navegação do carrossel
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    carrosselPrev.addEventListener('click', () => {
+      const newIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+      showSlide(newIndex);
+    });
+
+    carrosselNext.addEventListener('click', () => {
+      const newIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+      showSlide(newIndex);
+    });
+
+    // Navegação pelos dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
+
+    // Navegação com teclado
+    document.addEventListener('keydown', (e) => {
+      if (carrosselContainer.style.display === 'flex') {
+        if (e.key === 'Escape') {
+          carrosselContainer.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        } else if (e.key === 'ArrowLeft') {
+          const newIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+          showSlide(newIndex);
+        } else if (e.key === 'ArrowRight') {
+          const newIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+          showSlide(newIndex);
+        }
+      }
     });
   </script>
-  
-  
+
+
 </body>
+
 </html>
