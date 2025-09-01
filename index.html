@@ -46,7 +46,7 @@
         <li><a href="mailto:contatoleonaardo@gmail.com"><i class="fas fa-envelope"></i></a></li>
         <li><a href="https://github.com/SrMesquitaa"><i class="fab fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/leonardo-mesquitaa/"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="media/Leonardo_Mesquita - Analista de Dados.pdf" download><i class="fas fa-file-pdf"></i></a></li>
+        <li><a id="cv-download-link" href="media/Leonardo_Mesquita - Analista de Dados.pdf" download><i class="fas fa-file-pdf"></i></a></li>
       </ul>
     </div>
   </section>
@@ -155,7 +155,6 @@
   </div>
 
   <script>
-    // Configuração do i18next
     const resources = {
       pt: {
         translation: {
@@ -197,39 +196,44 @@
       }
     };
 
-    // Inicializar i18next
     i18next.init({
       resources: resources,
-      lng: 'pt', // idioma padrão
+      lng: 'pt',
       fallbackLng: 'pt',
       debug: false
     });
 
-    // Função para traduzir a página
+    const cvDownloadLink = document.getElementById('cv-download-link');
+    const curriculo_pt = "media/Leonardo_Mesquita - Analista de Dados.pdf";
+    const curriculo_en = "media/Leonardo Mesquita - Data Analyst.pdf";
+
     function updateContent() {
       document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         element.textContent = i18next.t(key);
       });
     }
+    function updateCvLink(lang) {
+        if (lang === 'en') {
+            cvDownloadLink.setAttribute('href', curriculo_en);
+        } else {
+            cvDownloadLink.setAttribute('href', curriculo_pt);
+        }
+    }
 
-    // Controle do modal Power BI
     const carrosselContainer = document.getElementById('carrossel-container');
     const carrosselClose = document.querySelector('.carrossel-close');
 
-    // Abrir modal ao clicar em "Ver mais" no card Power BI
     document.querySelector('.card-btn.one').addEventListener('click', () => {
       carrosselContainer.style.display = 'flex';
       document.body.style.overflow = 'hidden'; // Previne scroll da página
     });
 
-    // Fechar modal
     carrosselClose.addEventListener('click', () => {
       carrosselContainer.style.display = 'none';
       document.body.style.overflow = 'auto';
     });
 
-    // Fechar ao clicar fora do modal
     carrosselContainer.addEventListener('click', (e) => {
       if (e.target === carrosselContainer) {
         carrosselContainer.style.display = 'none';
@@ -237,7 +241,6 @@
       }
     });
 
-    // Fechar com teclado (ESC)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && carrosselContainer.style.display === 'flex') {
         carrosselContainer.style.display = 'none';
@@ -245,11 +248,9 @@
       }
     });
 
-    // Controle do botão de idioma
     const langToggle = document.getElementById('langToggle');
     let currentLang = localStorage.getItem('preferredLanguage') || 'pt';
 
-    // Carregar idioma salvo
     if (currentLang === 'en') {
       langToggle.classList.add('en');
       i18next.changeLanguage('en');
@@ -258,26 +259,21 @@
     langToggle.addEventListener('click', () => {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
 
-      // Adiciona/remove classe para animação
       langToggle.classList.toggle('en');
 
-      // Salva preferência no localStorage
       localStorage.setItem('preferredLanguage', currentLang);
 
-      // Adiciona efeito de clique
       langToggle.style.transform = 'scale(0.95)';
       setTimeout(() => {
         langToggle.style.transform = '';
       }, 150);
 
-      // Muda o idioma
       i18next.changeLanguage(currentLang);
       updateContent();
 
       console.log(`Idioma alterado para: ${currentLang}`);
     });
 
-    // Atualizar conteúdo na inicialização
     updateContent();
   </script>
 
