@@ -402,6 +402,11 @@ footer {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .carrossel-slide {
