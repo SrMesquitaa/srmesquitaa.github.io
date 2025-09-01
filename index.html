@@ -21,14 +21,26 @@
   <script defer src="script.js"></script>
   <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/dist/umd/i18next.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 
 <body>
 
+  <!-- Botão de Idioma -->
+  <div class="language-toggle">
+    <button class="lang-btn" id="langToggle">
+      <span class="flag-icon">BR</span>
+      <span class="flag-icon">US</span>
+      <div class="toggle-slider"></div>
+    </button>
+  </div>
+
   <section id="inicio" class="inicio">
     <div class="inicio-conteudo">
       <h1 class="titulo-nome">Leonardo Mesquita</h1>
-      <p>Analista de Dados | Power BI | Python </p>
+      <p data-i18n="profession">Analista de Dados | Power BI | Python </p>
 
       <ul class="intro-social">
         <li><a href="mailto:contatoleonaardo@gmail.com"><i class="fas fa-envelope"></i></a></li>
@@ -40,23 +52,25 @@
   </section>
 
   <section id="sobre" class="fade-in">
-    <h2>Sobre mim</h2>
-    <p>Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por
+    <h2 data-i18n="about-me">Sobre mim</h2>
+    <p data-i18n="about-text">Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado
+      por tecnologias e por
       otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e
       o crescimento.</p>
   </section>
 
   <section id="projetos" class="fade-in">
-    <h2 class="titulo-projetos">Projetos</h2>
+    <h2 class="titulo-projetos" data-i18n="projects">Projetos</h2>
     <div class="card-wrap">
       <div class="card-header one">
         <i class="fas fa-chart-pie"></i>
       </div>
       <div class="card-content">
-        <div class="card-title">Dashboard Power BI</div>
-        <div class="card-text">Visualização interativa de dados para insights estratégicos.</div>
+        <div class="card-title" data-i18n="powerbi-dashboard">Dashboard Power BI</div>
+        <div class="card-text" data-i18n="powerbi-description">Visualização interativa de dados para insights
+          estratégicos.</div>
 
-        <button class="card-btn one">Ver mais</button>
+        <button class="card-btn one" data-i18n="see-more">Ver mais</button>
       </div>
     </div>
     <div class="card-wrap">
@@ -64,15 +78,16 @@
         <i class="fas fa-cogs"></i>
       </div>
       <div class="card-content">
-        <div class="card-title">Automação com Python</div>
-        <div class="card-text">Scripts para otimizar processos e melhorar eficiência.</div>
-        <button class="card-btn two">Ver mais</button>
+        <div class="card-title" data-i18n="python-automation">Automação com Python</div>
+        <div class="card-text" data-i18n="python-description">Scripts para otimizar processos e melhorar eficiência.
+        </div>
+        <button class="card-btn two" data-i18n="see-more">Ver mais</button>
       </div>
     </div>
   </section>
 
   <section id="contato" class="fade-in">
-    <h2>Contato</h2>
+    <h2 data-i18n="contact">Contato</h2>
     <p>Email: <a href="mailto:contatoleonaardo@gmail.com">contatoleonaardo@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/leonardo-mesquitaa/"
         aria-label="Perfil do LinkedIn">linkedin.com/in/leonardo-mesquitaa</a></p>
@@ -99,8 +114,9 @@
             <img src="media/analise_uber.png" alt="Dashboard Uber Performance" />
           </div>
           <div class="projeto-info">
-            <h3>Uber Performance</h3>
-            <p>Análise completa de performance da Uber, incluindo métricas de viagens, receita,
+            <h3 data-i18n="uber-performance">Uber Performance</h3>
+            <p data-i18n="uber-description">Análise completa de performance da Uber, incluindo métricas de viagens,
+              receita,
               eficiência operacional e insights de negócio para otimização de estratégias.</p>
             <div class="projeto-tecnologias">
               <span class="tech-tag">Power BI</span>
@@ -108,7 +124,8 @@
               <span class="tech-tag">Métricas de Negócio</span>
             </div>
             <button class="projeto-btn"
-              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')">Ver
+              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')"
+              data-i18n="see-dashboard">Ver
               Dashboard</button>
           </div>
         </div>
@@ -118,8 +135,9 @@
             <img src="media/analise_gov.png" alt="Dashboard Análise de Sazonalidade" />
           </div>
           <div class="projeto-info">
-            <h3>Análise de Sazonalidade no Brasil</h3>
-            <p>Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros.
+            <h3 data-i18n="seasonality-analysis">Análise de Sazonalidade no Brasil</h3>
+            <p data-i18n="seasonality-description">Dashboard interativo analisando padrões sazonais e tendências
+              temporais em dados brasileiros.
               Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.</p>
             <div class="projeto-tecnologias">
               <span class="tech-tag">Power BI</span>
@@ -127,7 +145,8 @@
               <span class="tech-tag">Análise Temporal</span>
             </div>
             <button class="projeto-btn"
-              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')">Ver
+              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')"
+              data-i18n="see-dashboard">Ver
               Dashboard</button>
           </div>
         </div>
@@ -136,6 +155,64 @@
   </div>
 
   <script>
+    // Configuração do i18next
+    const resources = {
+      pt: {
+        translation: {
+          "profession": "Analista de Dados | Power BI | Python",
+          "about-me": "Sobre mim",
+          "about-text": "Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e o crescimento.",
+          "projects": "Projetos",
+          "powerbi-dashboard": "Dashboard Power BI",
+          "powerbi-description": "Visualização interativa de dados para insights estratégicos.",
+          "python-automation": "Automação com Python",
+          "python-description": "Scripts para otimizar processos e melhorar eficiência.",
+          "see-more": "Ver mais",
+          "contact": "Contato",
+          "uber-performance": "Uber Performance",
+          "uber-description": "Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.",
+          "seasonality-analysis": "Análise de Sazonalidade no Brasil",
+          "seasonality-description": "Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.",
+          "see-dashboard": "Ver Dashboard"
+        }
+      },
+      en: {
+        translation: {
+          "profession": "Data Analyst | Power BI | Python",
+          "about-me": "About me",
+          "about-text": "Data Analyst with expertise in Power BI, Python and process automation. Passionate about technologies and optimizing business workflows. I'm seeking new global opportunities to drive innovation and growth.",
+          "projects": "Projects",
+          "powerbi-dashboard": "Power BI Dashboard",
+          "powerbi-description": "Interactive data visualization for strategic insights.",
+          "python-automation": "Python Automation",
+          "python-description": "Scripts to optimize processes and improve efficiency.",
+          "see-more": "See more",
+          "contact": "Contact",
+          "uber-performance": "Uber Performance",
+          "uber-description": "Complete analysis of Uber performance, including trip metrics, revenue, operational efficiency and business insights for strategy optimization.",
+          "seasonality-analysis": "Seasonality Analysis in Brazil",
+          "seasonality-description": "Interactive dashboard analyzing seasonal patterns and temporal trends in Brazilian data. Visualization of strategic insights with dynamic filters and regional drill-down.",
+          "see-dashboard": "See Dashboard"
+        }
+      }
+    };
+
+    // Inicializar i18next
+    i18next.init({
+      resources: resources,
+      lng: 'pt', // idioma padrão
+      fallbackLng: 'pt',
+      debug: false
+    });
+
+    // Função para traduzir a página
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = i18next.t(key);
+      });
+    }
+
     // Controle do modal Power BI
     const carrosselContainer = document.getElementById('carrossel-container');
     const carrosselClose = document.querySelector('.carrossel-close');
@@ -167,9 +244,49 @@
         document.body.style.overflow = 'auto';
       }
     });
+
+    // Controle do botão de idioma
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+
+    // Carregar idioma salvo
+    if (currentLang === 'en') {
+      langToggle.classList.add('en');
+      i18next.changeLanguage('en');
+    }
+
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+
+      // Adiciona/remove classe para animação
+      langToggle.classList.toggle('en');
+
+      // Salva preferência no localStorage
+      localStorage.setItem('preferredLanguage', currentLang);
+
+      // Adiciona efeito de clique
+      langToggle.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        langToggle.style.transform = '';
+      }, 150);
+
+      // Muda o idioma
+      i18next.changeLanguage(currentLang);
+      updateContent();
+
+      console.log(`Idioma alterado para: ${currentLang}`);
+    });
+
+    // Atualizar conteúdo na inicialização
+    updateContent();
   </script>
 
 
 </body>
+
+</html>
+
+</body>
+
 
 </html>
