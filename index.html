@@ -26,9 +26,18 @@
     src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T95V3DWS8Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T95V3DWS8Y');
+</script>
+
 <body>
 
-  <!-- Botão de Idioma -->
   <div class="language-toggle">
     <button class="lang-btn" id="langToggle">
       <span class="flag-icon">BR</span>
@@ -104,7 +113,6 @@
     </iframe>
   </div>
 
-  <!-- Carrossel de Projetos Power BI -->
   <div id="carrossel-container" class="carrossel-overlay" style="display: none;">
     <div class="carrossel-content">
       <button class="carrossel-close">&times;</button>
