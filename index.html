@@ -30,7 +30,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T95V3DWS8Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-T95V3DWS8Y');
@@ -55,7 +55,8 @@
         <li><a href="mailto:contatoleonaardo@gmail.com"><i class="fas fa-envelope"></i></a></li>
         <li><a href="https://github.com/SrMesquitaa"><i class="fab fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/leonardo-mesquitaa/"><i class="fab fa-linkedin"></i></a></li>
-        <li><a id="cv-download-link" href="media/Leonardo_Mesquita - Analista de Dados.pdf" download><i class="fas fa-file-pdf"></i></a></li>
+        <li><a id="cv-download-link" href="media/Leonardo_Mesquita - Analista de Dados.pdf" download><i
+              class="fas fa-file-pdf"></i></a></li>
       </ul>
     </div>
   </section>
@@ -162,6 +163,34 @@
     </div>
   </div>
 
+  <!-- Carrossel de Projetos Python -->
+  <div id="python-carrossel-container" class="carrossel-overlay" style="display: none;">
+    <div class="carrossel-content">
+      <button class="carrossel-close">&times;</button>
+      <h2 data-i18n="python-projects">Projetos Python</h2>
+      <div class="carrossel-wrapper">
+        <div class="projeto-card">
+          <div class="projeto-imagem">
+            <img src="media/PRINT_VS CODE.png" alt="Script Python Uber Analysis" />
+          </div>
+          <div class="projeto-info">
+            <h3 data-i18n="uber-analysis-script">Análise Uber Driver</h3>
+            <p data-i18n="uber-analysis-description">Script Python para automatizar ETL da análise de dados da Uber.
+              Inclui automação de retirada de dados, limpeza dos dados e salvamento em JSON.</p>
+            <div class="projeto-tecnologias">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">ETL</span>
+            </div>
+            <button class="projeto-btn"
+              onclick="window.open('https://github.com/SrMesquitaa/uber_driver_analysis.py', '_blank')"
+              data-i18n="see-code">Ver Código</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const resources = {
       pt: {
@@ -180,7 +209,8 @@
           "uber-description": "Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.",
           "seasonality-analysis": "Análise de Sazonalidade no Brasil",
           "seasonality-description": "Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.",
-          "see-dashboard": "Ver Dashboard"
+          "see-dashboard": "Ver Dashboard",
+          "python-projects": "Projetos Python"
         }
       },
       en: {
@@ -199,7 +229,8 @@
           "uber-description": "Complete analysis of Uber performance, including trip metrics, revenue, operational efficiency and business insights for strategy optimization.",
           "seasonality-analysis": "Seasonality Analysis in Brazil",
           "seasonality-description": "Interactive dashboard analyzing seasonal patterns and temporal trends in Brazilian data. Visualization of strategic insights with dynamic filters and regional drill-down.",
-          "see-dashboard": "See Dashboard"
+          "see-dashboard": "See Dashboard",
+          "python-projects": "Python Projects"
         }
       }
     };
@@ -222,11 +253,11 @@
       });
     }
     function updateCvLink(lang) {
-        if (lang === 'en') {
-            cvDownloadLink.setAttribute('href', curriculo_en);
-        } else {
-            cvDownloadLink.setAttribute('href', curriculo_pt);
-        }
+      if (lang === 'en') {
+        cvDownloadLink.setAttribute('href', curriculo_en);
+      } else {
+        cvDownloadLink.setAttribute('href', curriculo_pt);
+      }
     }
 
     const carrosselContainer = document.getElementById('carrossel-container');
@@ -281,10 +312,38 @@
       i18next.changeLanguage(currentLang);
       updateContent();
 
-    updateCvLink(currentLang);
+      updateCvLink(currentLang);
 
 
       console.log(`Idioma alterado para: ${currentLang}`);
+    });
+
+    // Carrossel Python
+    const pythonCarrosselContainer = document.getElementById('python-carrossel-container');
+    const pythonCarrosselClose = document.querySelector('#python-carrossel-container .carrossel-close');
+
+    document.querySelector('.card-btn.two').addEventListener('click', () => {
+      pythonCarrosselContainer.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+
+    pythonCarrosselClose.addEventListener('click', () => {
+      pythonCarrosselContainer.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    pythonCarrosselContainer.addEventListener('click', (e) => {
+      if (e.target === pythonCarrosselContainer) {
+        pythonCarrosselContainer.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pythonCarrosselContainer.style.display === 'flex') {
+        pythonCarrosselContainer.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
     });
 
     updateContent();
