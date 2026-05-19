@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fadeObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
   fadeElements.forEach(el => fadeObserver.observe(el));
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // Active nav link on scroll (scrollspy)
+  // Active nav link scrollspy
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('[data-nav]');
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sections.forEach(s => sectionObserver.observe(s));
 
-  // Hamburger menu toggle
+  // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
 
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Typewriter effect
-  const wordsPT = ['Analista de Dados', 'Power BI Expert', 'Python Developer', 'Automação de Processos'];
-  const wordsEN = ['Data Analyst', 'Power BI Expert', 'Python Developer', 'Process Automation'];
+  const wordsPT = ['Engenheiro de Dados', 'Python & BigQuery', 'Pipelines ETL', 'Self-taught Builder'];
+  const wordsEN = ['Data Engineer', 'Python & BigQuery', 'ETL Pipelines', 'Self-taught Builder'];
 
   const typeEl = document.getElementById('typewriter');
   let wordIndex = 0;
@@ -68,12 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const words = getWords();
     const word = words[wordIndex % words.length];
 
-    if (isDeleting) {
-      charIndex--;
-    } else {
-      charIndex++;
-    }
-
+    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
     typeEl.textContent = word.substring(0, charIndex);
 
     let delay = isDeleting ? 55 : 95;

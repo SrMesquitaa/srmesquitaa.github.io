@@ -16,7 +16,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonardo Mesquita | Portfólio</title>
+  <title>Leonardo Mesquita | Data Engineer</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
   <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
@@ -42,6 +42,7 @@
       <a href="#inicio" class="nav-logo">LM</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#sobre" data-i18n="nav-about" data-nav>Sobre</a></li>
+        <li><a href="#experiencia" data-i18n="nav-experience" data-nav>Experiência</a></li>
         <li><a href="#skills" data-nav>Skills</a></li>
         <li><a href="#projetos" data-i18n="nav-projects" data-nav>Projetos</a></li>
         <li><a href="#contato" data-i18n="nav-contact" data-nav>Contato</a></li>
@@ -64,6 +65,12 @@
   <!-- Hero -->
   <section id="inicio">
     <div class="hero-content">
+      <div class="hero-photo-wrap">
+        <div class="hero-initials" id="hero-initials">LM</div>
+        <img class="hero-photo-img" src="media/foto.jpg" alt="Leonardo Mesquita"
+          onload="this.style.opacity='1'; document.getElementById('hero-initials').style.display='none';"
+          onerror="this.style.display='none';">
+      </div>
       <p class="hero-greeting" data-i18n="hero-greeting">Olá, eu sou</p>
       <h1 class="titulo-nome">Leonardo Mesquita</h1>
       <p class="hero-subtitle">
@@ -85,7 +92,45 @@
   <section id="sobre" class="fade-in">
     <div class="section-inner">
       <h2 data-i18n="about-me">Sobre mim</h2>
-      <p data-i18n="about-text">Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e o crescimento.</p>
+      <p data-i18n="about-text">Engenheiro de Dados self-taught com experiência prática construindo infraestruturas de dados do zero em produção. Apaixonado por resolver problemas reais com tecnologia. Busco oportunidades internacionais para construir sistemas de dados robustos e escaláveis.</p>
+    </div>
+  </section>
+
+  <!-- Experiência -->
+  <section id="experiencia" class="fade-in">
+    <div class="section-inner">
+      <h2 data-i18n="exp-title">Experiência</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-badge">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 data-i18n="exp-role">Data Engineer</h3>
+              <span class="timeline-company" data-i18n="exp-company">Amels Conceito · Fortaleza, CE</span>
+              <span class="timeline-period" data-i18n="exp-period">2024 — Presente</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li data-i18n="exp-b1">Projetei e implantei do zero a arquitetura de dados Bronze/Silver/Gold no BigQuery</li>
+              <li data-i18n="exp-b2">Construí pipelines ETL automatizados rodando em produção com Python e Google Cloud</li>
+              <li data-i18n="exp-b3">Desenvolvi dashboards interativos em Streamlit e Power BI para análise operacional</li>
+              <li data-i18n="exp-b4">Criei formulário de captação de vendas em Next.js 15 com autenticação via Clerk</li>
+              <li data-i18n="exp-b5">Desenvolvi o Fast-Leads: sistema WhatsApp de distribuição de leads com round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API</li>
+            </ul>
+            <div class="timeline-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BigQuery</span>
+              <span class="tech-tag">Google Cloud</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">AWS EC2</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -95,28 +140,31 @@
       <h2 data-i18n="skills-title">Habilidades</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3 data-i18n="skills-data">Dados & Analytics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
-            <span class="skill-tag"><i class="fas fa-table"></i> DAX</span>
-            <span class="skill-tag"><i class="fas fa-file-excel"></i> Excel</span>
-            <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills-programming">Programação</h3>
+          <h3 data-i18n="skills-data">Engenharia de Dados</h3>
           <div class="skill-tags">
             <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-            <span class="skill-tag"><i class="fas fa-spider"></i> Web Scraping</span>
-            <span class="skill-tag"><i class="fas fa-code"></i> JSON / APIs</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> BigQuery</span>
+            <span class="skill-tag"><i class="fas fa-exchange-alt"></i> ETL</span>
+            <span class="skill-tag"><i class="fas fa-code"></i> SQL</span>
+            <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3 data-i18n="skills-process">Processos</h3>
+          <h3 data-i18n="skills-cloud">Cloud & Infraestrutura</h3>
           <div class="skill-tags">
-            <span class="skill-tag"><i class="fas fa-exchange-alt"></i> ETL</span>
-            <span class="skill-tag"><i class="fas fa-robot"></i> Automação</span>
-            <span class="skill-tag"><i class="fas fa-bolt"></i> Power Automate</span>
+            <span class="skill-tag"><i class="fab fa-google"></i> Google Cloud</span>
+            <span class="skill-tag"><i class="fab fa-aws"></i> AWS EC2</span>
+            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="skill-tag"><i class="fas fa-terminal"></i> Linux</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 data-i18n="skills-analytics">Analytics & BI</h3>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="fas fa-chart-line"></i> Streamlit</span>
+            <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+            <span class="skill-tag"><i class="fas fa-table"></i> DAX</span>
+            <span class="skill-tag"><i class="fas fa-layer-group"></i> Next.js</span>
           </div>
         </div>
       </div>
@@ -130,22 +178,32 @@
       <div class="cards-row">
         <div class="card-wrap">
           <div class="card-header one">
-            <i class="fas fa-chart-pie"></i>
+            <i class="fas fa-database"></i>
           </div>
           <div class="card-content">
-            <div class="card-title" data-i18n="powerbi-dashboard">Dashboard Power BI</div>
-            <div class="card-text" data-i18n="powerbi-description">Visualização interativa de dados para insights estratégicos.</div>
+            <div class="card-title" data-i18n="data-platform">Plataforma de Dados</div>
+            <div class="card-text" data-i18n="data-platform-desc">Arquitetura BigQuery Bronze/Silver/Gold com pipelines ETL em produção.</div>
             <button class="card-btn one" data-i18n="see-more">Ver mais</button>
           </div>
         </div>
         <div class="card-wrap">
           <div class="card-header two">
-            <i class="fas fa-cogs"></i>
+            <i class="fas fa-bolt"></i>
           </div>
           <div class="card-content">
-            <div class="card-title" data-i18n="python-automation">Automação com Python</div>
-            <div class="card-text" data-i18n="python-description">Scripts para otimizar processos e melhorar eficiência.</div>
+            <div class="card-title" data-i18n="fastleads">Fast-Leads Bot</div>
+            <div class="card-text" data-i18n="fastleads-desc">Distribuição de leads via WhatsApp com round-robin e monitoramento 24/7.</div>
             <button class="card-btn two" data-i18n="see-more">Ver mais</button>
+          </div>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header three">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title" data-i18n="bi-analytics">BI & Analytics</div>
+            <div class="card-text" data-i18n="bi-analytics-desc">Dashboards Streamlit e Power BI para análise operacional.</div>
+            <button class="card-btn three" data-i18n="see-more">Ver mais</button>
           </div>
         </div>
       </div>
@@ -165,8 +223,90 @@
     <p>&copy; 2025 Leonardo Mesquita. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Carrossel Power BI -->
-  <div id="carrossel-container" class="carrossel-overlay" style="display: none;">
+  <!-- Modal: Data Platform -->
+  <div id="dp-modal" class="carrossel-overlay" style="display: none;">
+    <div class="carrossel-content modal-project">
+      <button class="carrossel-close" aria-label="Fechar">&times;</button>
+      <div class="modal-proj-header">
+        <div class="modal-proj-icon dp-icon"><i class="fas fa-database"></i></div>
+        <div>
+          <h2>BigQuery Data Platform</h2>
+          <p class="modal-proj-company">Amels Conceito · Fortaleza, Brazil</p>
+        </div>
+      </div>
+      <p class="modal-proj-desc">Built the entire data infrastructure from zero for a Hapvida sales operation — ingestion, transformation, and analytics layers, fully automated and running in production.</p>
+      <div class="arch-diagram">
+        <div class="arch-layer bronze">
+          <i class="fas fa-inbox"></i>
+          <strong>Bronze</strong>
+          <span>Raw ingestion</span>
+        </div>
+        <i class="fas fa-long-arrow-alt-right arch-arrow"></i>
+        <div class="arch-layer silver">
+          <i class="fas fa-filter"></i>
+          <strong>Silver</strong>
+          <span>Cleaned & validated</span>
+        </div>
+        <i class="fas fa-long-arrow-alt-right arch-arrow"></i>
+        <div class="arch-layer gold">
+          <i class="fas fa-chart-bar"></i>
+          <strong>Gold</strong>
+          <span>Analytics ready</span>
+        </div>
+      </div>
+      <h4 class="modal-section-label">Key deliverables</h4>
+      <ul class="modal-bullets">
+        <li>Designed the Bronze/Silver/Gold medallion architecture on BigQuery from scratch</li>
+        <li>Built automated ETL pipelines in Python, scheduled and running in production</li>
+        <li>Deployed on Google Cloud with monitoring, alerting and cost optimization</li>
+        <li>Integrated with Streamlit dashboards for real-time operational visibility</li>
+      </ul>
+      <div class="projeto-tecnologias">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">BigQuery</span>
+        <span class="tech-tag">Google Cloud</span>
+        <span class="tech-tag">ETL</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Docker</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Fast-Leads -->
+  <div id="fl-modal" class="carrossel-overlay" style="display: none;">
+    <div class="carrossel-content modal-project">
+      <button class="carrossel-close" aria-label="Fechar">&times;</button>
+      <div class="modal-proj-header">
+        <div class="modal-proj-icon fl-icon"><i class="fas fa-bolt"></i></div>
+        <div>
+          <h2>Fast-Leads Bot</h2>
+          <p class="modal-proj-company">WhatsApp lead distribution system</p>
+        </div>
+      </div>
+      <p class="modal-proj-desc">Automated system that receives incoming sales leads and distributes them in real-time to sales agents via WhatsApp — with smart round-robin logic, duplicate filtering, and 24/7 uptime monitoring.</p>
+      <h4 class="modal-section-label">How it works</h4>
+      <ul class="modal-bullets">
+        <li><strong>Round-robin:</strong> Distributes leads evenly and fairly across all active agents</li>
+        <li><strong>Duplicate cache:</strong> Detects and filters already-processed leads in real time</li>
+        <li><strong>24/7 Sentinel:</strong> Monitors process health and auto-restarts on failure</li>
+        <li><strong>Containerized:</strong> Runs on Docker + AWS EC2 via Evolution API</li>
+      </ul>
+      <div class="projeto-tecnologias">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Evolution API</span>
+        <span class="tech-tag">AWS EC2</span>
+        <span class="tech-tag">WhatsApp</span>
+      </div>
+      <div class="private-badge">
+        <i class="fas fa-lock"></i>
+        <span>Private repository — planning to commercialize</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: BI & Analytics -->
+  <div id="bi-modal" class="carrossel-overlay" style="display: none;">
     <div class="carrossel-content">
       <button class="carrossel-close" aria-label="Fechar">&times;</button>
       <div class="carrossel-wrapper">
@@ -179,8 +319,8 @@
             <p data-i18n="uber-description">Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.</p>
             <div class="projeto-tecnologias">
               <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX</span>
               <span class="tech-tag">Análise de Performance</span>
-              <span class="tech-tag">Métricas de Negócio</span>
             </div>
             <button class="projeto-btn"
               onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')"
@@ -208,93 +348,82 @@
     </div>
   </div>
 
-  <!-- Carrossel Python -->
-  <div id="python-carrossel-container" class="carrossel-overlay" style="display: none;">
-    <div class="carrossel-content">
-      <button class="carrossel-close" aria-label="Fechar">&times;</button>
-      <h2 data-i18n="python-projects">Projetos Python</h2>
-      <div class="carrossel-wrapper">
-        <div class="projeto-card">
-          <div class="projeto-imagem">
-            <img src="media/PRINT_VS CODE.png" alt="Script Python Uber Analysis" />
-          </div>
-          <div class="projeto-info">
-            <h3 data-i18n="uber-analysis-script">Análise Uber Driver</h3>
-            <p data-i18n="uber-analysis-description">Script Python para automatizar ETL da análise de dados da Uber. Inclui automação de retirada de dados, limpeza dos dados e salvamento em JSON.</p>
-            <div class="projeto-tecnologias">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Web Scraping</span>
-              <span class="tech-tag">JSON</span>
-            </div>
-            <button class="projeto-btn"
-              onclick="window.open('https://github.com/SrMesquitaa/uber_driver_analysis.py', '_blank')"
-              data-i18n="see-code">Ver Código</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
     const resources = {
       pt: {
         translation: {
           "hero-greeting": "Olá, eu sou",
           "nav-about": "Sobre",
+          "nav-experience": "Experiência",
           "nav-projects": "Projetos",
           "nav-contact": "Contato",
-          "skills-title": "Habilidades",
-          "skills-data": "Dados & Analytics",
-          "skills-programming": "Programação",
-          "skills-process": "Processos",
           "about-me": "Sobre mim",
-          "about-text": "Analista de Dados com expertise em Power BI, Python e automação de processos. Apaixonado por tecnologias e por otimizar fluxos de trabalho empresariais. Estou buscando novas oportunidades globais para impulsionar a inovação e o crescimento.",
+          "about-text": "Engenheiro de Dados self-taught com experiência prática construindo infraestruturas de dados do zero em produção. Apaixonado por resolver problemas reais com tecnologia. Busco oportunidades internacionais para construir sistemas de dados robustos e escaláveis.",
+          "exp-title": "Experiência",
+          "exp-role": "Data Engineer",
+          "exp-company": "Amels Conceito · Fortaleza, CE",
+          "exp-period": "2024 — Presente",
+          "exp-b1": "Projetei e implantei do zero a arquitetura de dados Bronze/Silver/Gold no BigQuery",
+          "exp-b2": "Construí pipelines ETL automatizados rodando em produção com Python e Google Cloud",
+          "exp-b3": "Desenvolvi dashboards interativos em Streamlit e Power BI para análise operacional",
+          "exp-b4": "Criei formulário de captação de vendas em Next.js 15 com autenticação via Clerk",
+          "exp-b5": "Desenvolvi o Fast-Leads: sistema WhatsApp de distribuição de leads com round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API",
+          "skills-title": "Habilidades",
+          "skills-data": "Engenharia de Dados",
+          "skills-cloud": "Cloud & Infraestrutura",
+          "skills-analytics": "Analytics & BI",
           "projects": "Projetos",
-          "powerbi-dashboard": "Dashboard Power BI",
-          "powerbi-description": "Visualização interativa de dados para insights estratégicos.",
-          "python-automation": "Automação com Python",
-          "python-description": "Scripts para otimizar processos e melhorar eficiência.",
+          "data-platform": "Plataforma de Dados",
+          "data-platform-desc": "Arquitetura BigQuery Bronze/Silver/Gold com pipelines ETL automatizados em produção.",
+          "fastleads": "Fast-Leads Bot",
+          "fastleads-desc": "Distribuição de leads via WhatsApp com round-robin e monitoramento 24/7 em Docker.",
+          "bi-analytics": "BI & Analytics",
+          "bi-analytics-desc": "Dashboards Streamlit e Power BI para análise operacional e tomada de decisão.",
           "see-more": "Ver mais",
           "contact": "Contato",
           "uber-performance": "Uber Performance",
           "uber-description": "Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.",
           "seasonality-analysis": "Análise de Sazonalidade no Brasil",
           "seasonality-description": "Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.",
-          "see-dashboard": "Ver Dashboard",
-          "python-projects": "Projetos Python",
-          "uber-analysis-script": "Python Web Scraper: Ganhos Uber",
-          "uber-analysis-description": "Web Scraping para extrair dados detalhados de atividades de motorista Uber, com persistência de sessão via Cookies e output em JSON.",
-          "see-code": "Ver Código"
+          "see-dashboard": "Ver Dashboard"
         }
       },
       en: {
         translation: {
           "hero-greeting": "Hi, I'm",
           "nav-about": "About",
+          "nav-experience": "Experience",
           "nav-projects": "Projects",
           "nav-contact": "Contact",
-          "skills-title": "Skills",
-          "skills-data": "Data & Analytics",
-          "skills-programming": "Programming",
-          "skills-process": "Processes",
           "about-me": "About me",
-          "about-text": "Data Analyst with expertise in Power BI, Python and process automation. Passionate about technologies and optimizing business workflows. I'm seeking new global opportunities to drive innovation and growth.",
+          "about-text": "Self-taught Data Engineer with hands-on experience building data infrastructures from scratch in production. Passionate about solving real-world problems with technology. Seeking international opportunities to build robust, scalable data systems.",
+          "exp-title": "Experience",
+          "exp-role": "Data Engineer",
+          "exp-company": "Amels Conceito · Fortaleza, Brazil",
+          "exp-period": "2024 — Present",
+          "exp-b1": "Designed and built from scratch a Bronze/Silver/Gold data architecture on BigQuery",
+          "exp-b2": "Built automated ETL pipelines running in production using Python and Google Cloud",
+          "exp-b3": "Developed interactive dashboards in Streamlit and Power BI for operational analytics",
+          "exp-b4": "Built a Next.js 15 sales capture form with Clerk authentication",
+          "exp-b5": "Developed Fast-Leads: a WhatsApp lead distribution system with round-robin, duplicate cache and 24/7 sentinel using Docker + Evolution API",
+          "skills-title": "Skills",
+          "skills-data": "Data Engineering",
+          "skills-cloud": "Cloud & Infrastructure",
+          "skills-analytics": "Analytics & BI",
           "projects": "Projects",
-          "powerbi-dashboard": "Power BI Dashboard",
-          "powerbi-description": "Interactive data visualization for strategic insights.",
-          "python-automation": "Python Automation",
-          "python-description": "Scripts to optimize processes and improve efficiency.",
+          "data-platform": "Data Platform",
+          "data-platform-desc": "BigQuery Bronze/Silver/Gold architecture with automated ETL pipelines in production.",
+          "fastleads": "Fast-Leads Bot",
+          "fastleads-desc": "WhatsApp lead distribution with round-robin and 24/7 Docker monitoring.",
+          "bi-analytics": "BI & Analytics",
+          "bi-analytics-desc": "Streamlit and Power BI dashboards for operational analytics and decision-making.",
           "see-more": "See more",
           "contact": "Contact",
           "uber-performance": "Uber Performance",
           "uber-description": "Complete analysis of Uber performance, including trip metrics, revenue, operational efficiency and business insights for strategy optimization.",
           "seasonality-analysis": "Seasonality Analysis in Brazil",
           "seasonality-description": "Interactive dashboard analyzing seasonal patterns and temporal trends in Brazilian data. Visualization of strategic insights with dynamic filters and regional drill-down.",
-          "see-dashboard": "See Dashboard",
-          "python-projects": "Python Projects",
-          "uber-analysis-script": "Python Web Scraper: Uber Earnings",
-          "uber-analysis-description": "Web Scraping to extract detailed data from Uber driver activities, with session persistence via Cookies and JSON output.",
-          "see-code": "See Code"
+          "see-dashboard": "See Dashboard"
         }
       }
     };
@@ -321,54 +450,39 @@
       cvDownloadLink.setAttribute('href', lang === 'en' ? curriculo_en : curriculo_pt);
     }
 
-    // Carrossel Power BI
-    const carrosselContainer = document.getElementById('carrossel-container');
-    const carrosselClose = document.querySelector('#carrossel-container .carrossel-close');
-
-    document.querySelector('.card-btn.one').addEventListener('click', () => {
-      carrosselContainer.style.display = 'flex';
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
       document.body.style.overflow = 'hidden';
-    });
+    }
 
-    carrosselClose.addEventListener('click', () => {
-      carrosselContainer.style.display = 'none';
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
       document.body.style.overflow = '';
+    }
+
+    // Card buttons → modals
+    const modals = ['dp-modal', 'fl-modal', 'bi-modal'];
+    document.querySelectorAll('.card-btn').forEach((btn, i) => {
+      btn.addEventListener('click', () => openModal(modals[i]));
     });
 
-    carrosselContainer.addEventListener('click', (e) => {
-      if (e.target === carrosselContainer) {
-        carrosselContainer.style.display = 'none';
-        document.body.style.overflow = '';
-      }
+    // Close buttons
+    document.querySelectorAll('.carrossel-close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modals.forEach(id => closeModal(id));
+      });
     });
 
-    // Carrossel Python
-    const pythonCarrosselContainer = document.getElementById('python-carrossel-container');
-    const pythonCarrosselClose = document.querySelector('#python-carrossel-container .carrossel-close');
-
-    document.querySelector('.card-btn.two').addEventListener('click', () => {
-      pythonCarrosselContainer.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+    // Click outside modal
+    modals.forEach(id => {
+      document.getElementById(id).addEventListener('click', (e) => {
+        if (e.target === document.getElementById(id)) closeModal(id);
+      });
     });
 
-    pythonCarrosselClose.addEventListener('click', () => {
-      pythonCarrosselContainer.style.display = 'none';
-      document.body.style.overflow = '';
-    });
-
-    pythonCarrosselContainer.addEventListener('click', (e) => {
-      if (e.target === pythonCarrosselContainer) {
-        pythonCarrosselContainer.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-    });
-
+    // Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        carrosselContainer.style.display = 'none';
-        pythonCarrosselContainer.style.display = 'none';
-        document.body.style.overflow = '';
-      }
+      if (e.key === 'Escape') modals.forEach(id => closeModal(id));
     });
 
     // Language toggle
