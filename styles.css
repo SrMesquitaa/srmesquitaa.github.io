@@ -218,8 +218,8 @@ body {
 /* Hero photo */
 .hero-photo-wrap {
   position: relative;
-  width: 108px;
-  height: 108px;
+  width: 124px;
+  height: 124px;
   border-radius: 50%;
   border: 3px solid var(--accent);
   box-shadow: 0 0 0 6px var(--accent-light);
@@ -247,7 +247,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 42%;
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
