@@ -249,7 +249,7 @@ body {
   object-fit: cover;
   object-position: center 30%;
   transform: scale(1.6);
-  transform-origin: center 28%;
+  transform-origin: center 22%;
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
