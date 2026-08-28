@@ -35,6 +35,12 @@
   ::selection { background: #e0e7ff; }
   @keyframes lmBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   @keyframes lmBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+  .hamburger-btn { display: none; }
+  @media (max-width: 780px) {
+    .nav-links-desktop { display: none !important; }
+    .hamburger-btn { display: flex !important; }
+    .cv-btn-label { display: none; }
+  }
 </style>
 </helmet>
 
@@ -42,28 +48,38 @@
 
 <nav style="position: fixed; top: 0; left: 0; right: 0; height: 64px; background: rgba(255,255,255,0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #e5e7eb; z-index: 999;">
   <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-    <a href="#inicio" style="font-family: 'Coolvetica', sans-serif; font-size: 1.4rem; color: #4f46e5; letter-spacing: 2px;">LM</a>
-    <div style="display: flex; align-items: center; gap: 2px;">
+    <a href="#inicio" style="font-family: 'Coolvetica', sans-serif; font-size: 1.4rem; color: #4f46e5; letter-spacing: 2px; flex-shrink: 0;">LM</a>
+    <div class="nav-links-desktop" style="display: flex; align-items: center; gap: 2px;">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
-        <a href="{{ n.href }}" style="color: #6b7280; font-size: 0.88rem; font-weight: 500; padding: 7px 12px; border-radius: 8px; transition: all 0.2s ease;" style-hover="color: #4f46e5; background: #eef2ff;">{{ n.label }}</a>
+        <a href="{{ n.href }}" style="{{ n.itemStyle }}" style-hover="color: #4f46e5; background: #eef2ff;">{{ n.label }}</a>
       </sc-for>
     </div>
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
       <a href="{{ cvHref }}" download="download" style="display: inline-flex; align-items: center; gap: 7px; background: #4f46e5; color: #fff; font-size: 0.82rem; font-weight: 600; padding: 8px 15px; border-radius: 8px; transition: background 0.2s ease;" style-hover="background: #4338ca; color: #fff;">
-        <i class="fas fa-download" style="font-size: 0.75rem;"></i>{{ t.cv }}
+        <i class="fas fa-download" style="font-size: 0.75rem;"></i><span class="cv-btn-label">{{ t.cv }}</span>
       </a>
       <button onClick="{{ toggleLang }}" aria-label="Trocar idioma" style="border: 1px solid #d1d5db; background: #fff; color: #374151; font-family: 'Roboto', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.6px; padding: 8px 11px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" style-hover="border-color: #4f46e5; color: #4f46e5;">{{ t.langSwitch }}</button>
+      <button class="hamburger-btn" onClick="{{ toggleMobileMenu }}" aria-label="Menu" style="align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #d1d5db; background: #fff; color: #374151; border-radius: 8px; cursor: pointer; font-size: 1rem;">
+        <i class="{{ hamburgerIcon }}"></i>
+      </button>
     </div>
   </div>
+  <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="background: #ffffff; border-top: 1px solid #e5e7eb; padding: 8px 16px 16px; display: flex; flex-direction: column;">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+        <a href="{{ n.href }}" onClick="{{ closeMobileMenu }}" style="{{ n.mobileItemStyle }}">{{ n.label }}</a>
+      </sc-for>
+    </div>
+  </sc-if>
 </nav>
 
-<section id="inicio" style="min-height: 100vh; padding: 64px 24px 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #ffffff; background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px;">
+<section id="inicio" style="min-height: 100vh; padding: 104px 24px 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #ffffff; background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px;">
   <div style="position: relative; width: 124px; height: 124px; border-radius: 50%; border: 3px solid #6366f1; box-shadow: 0 0 0 6px #eef2ff; margin-bottom: 24px; overflow: hidden; background: #eef2ff; flex-shrink: 0;">
     <img src="media/LM.jpeg" alt="Leonardo Mesquita" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 45%; transform: scale(2); transform-origin: 48% 45%; border-radius: 50%;">
   </div>
   <p style="font-size: 0.82rem; color: #4f46e5; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 10px;">{{ t.greeting }}</p>
-  <h1 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(2.8rem, 8vw, 5.5rem); color: #111827; line-height: 1.1; margin: 0 0 14px; font-weight: 400;">Leonardo Mesquita</h1>
-  <p style="font-size: clamp(1.05rem, 2.6vw, 1.45rem); color: #374151; font-weight: 500; margin: 0 0 10px; min-height: 1.8rem;">{{ typed }}<span style="display: inline-block; color: #6366f1; font-weight: 300; margin-left: 2px; animation: lmBlink 1s step-end infinite;">|</span></p>
+  <h1 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(2.8rem, 8vw, 5.5rem); color: #111827; line-height: 1.1; margin: 0 0 14px; font-weight: 400; width: 100%;">Leonardo Mesquita</h1>
+  <p style="font-size: clamp(1.05rem, 2.6vw, 1.45rem); color: #374151; font-weight: 500; margin: 0 0 10px; min-height: 1.8rem; width: 100%;">{{ typed }}<span style="display: inline-block; color: #6366f1; font-weight: 300; margin-left: 2px; animation: lmBlink 1s step-end infinite;">|</span></p>
   <p style="max-width: 620px; font-size: 1rem; color: #6b7280; line-height: 1.75; margin: 0 0 30px; text-wrap: pretty;">{{ t.heroPitch }}</p>
 
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 34px;">
@@ -146,7 +162,7 @@
         </div>
       </sc-for>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-left: 60px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 22px 24px;">
           <h4 style="font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4f46e5; margin: 0 0 12px;">{{ t.eduTitle }}</h4>
           <p style="font-size: 0.92rem; font-weight: 600; color: #111827; margin: 0 0 4px;">{{ t.eduCourse }}</p>
@@ -221,7 +237,7 @@
 </section>
 
 <footer style="text-align: center; padding: 26px 24px; background: #111827; color: rgba(255,255,255,0.75); font-size: 0.85rem;">
-  <p style="margin: 0;">© 2025 Leonardo Mesquita. {{ t.rights }}</p>
+  <p style="margin: 0;">© 2026 Leonardo Mesquita. {{ t.rights }}</p>
 </footer>
 
 <sc-if value="{{ active }}" hint-placeholder-val="{{ false }}">
@@ -621,7 +637,7 @@ const DICT = {
 };
 
 class Component extends DCLogic {
-  state = { lang: "pt", activeIndex: null, typed: "", wi: 0, ci: 0, del: false, cookieVisible: false };
+  state = { lang: "pt", activeIndex: null, typed: "", wi: 0, ci: 0, del: false, cookieVisible: false, mobileMenuOpen: false, activeSection: "inicio" };
 
   componentDidMount() {
     this.tick();
@@ -630,8 +646,27 @@ class Component extends DCLogic {
         this.cookieTimer = setTimeout(() => this.setState({ cookieVisible: true }), 1200);
       }
     } catch (e) {}
+    this.sectionIds = ["inicio", "sobre", "experiencia", "projetos", "skills", "contato"];
+    this.onScroll = () => {
+      const y = window.scrollY + 96;
+      let current = this.sectionIds[0];
+      for (const id of this.sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= y) current = id;
+      }
+      if (current !== this.state.activeSection) this.setState({ activeSection: current });
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
   }
-  componentWillUnmount() { clearTimeout(this.timer); clearTimeout(this.cookieTimer); }
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+    clearTimeout(this.cookieTimer);
+    window.removeEventListener("scroll", this.onScroll);
+  }
+
+  toggleMobileMenu = () => this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
+  closeMobileMenu = () => this.setState({ mobileMenuOpen: false });
 
   acceptCookies = () => {
     try {
@@ -679,7 +714,22 @@ class Component extends DCLogic {
       typed: this.state.typed,
       cvHref: lang === "en" ? CV_EN : CV_PT,
       toggleLang: () => this.setState({ lang: lang === "pt" ? "en" : "pt", ci: 0, del: false, typed: "" }),
-      nav: d.nav.map(n => ({ href: n[0], label: n[1] })),
+      nav: d.nav.map(n => {
+        const isActive = this.state.activeSection === n[0].replace("#", "");
+        const activeColor = isActive ? "#4f46e5" : "#6b7280";
+        const activeBg = isActive ? "#eef2ff" : "transparent";
+        const activeWeight = isActive ? 700 : 500;
+        return {
+          href: n[0],
+          label: n[1],
+          itemStyle: `color: ${activeColor}; font-size: 0.88rem; font-weight: ${activeWeight}; padding: 7px 12px; border-radius: 8px; transition: all 0.2s ease; background: ${activeBg};`,
+          mobileItemStyle: `color: ${activeColor}; font-size: 1rem; font-weight: ${activeWeight}; padding: 12px 8px; border-radius: 8px; display: block; background: ${activeBg};`
+        };
+      }),
+      mobileMenuOpen: this.state.mobileMenuOpen,
+      toggleMobileMenu: this.toggleMobileMenu,
+      closeMobileMenu: this.closeMobileMenu,
+      hamburgerIcon: this.state.mobileMenuOpen ? "fas fa-times" : "fas fa-bars",
       heroChips: d.heroChips,
       metrics: d.metrics,
       jobs: d.jobs,
