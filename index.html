@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
-<!--
-###################################################################################################
-#                                                                                                 #
-#   CHEGOU ATÉ AQUI? ENTÃO VOCÊ É CURIOSO(A)                                                      #
-#   👋 OI, RECRUTADOR(A)!  ͡❛ ͜ʖ ͡❛                                                                  #
-#                                                                                                 #
-#   PRECISO DE UM EMPREGO HOME-OFFICE! ME CONTRATA?                                               #
-#   📞 +55 (85) 99977-4142                                                                        #
-#                                                                                                 #
-###################################################################################################
--->
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonardo Mesquita | Data Engineer</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-  <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/dist/umd/i18next.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonardo Mesquita | Data Engineer</title>
+<link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+<script src="./support.js"></script>
 </head>
-
-<!-- Google Consent Mode v2 — deve rodar ANTES do gtag carregar -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
@@ -39,514 +20,686 @@
   gtag('js', new Date());
   gtag('config', 'G-T95V3DWS8Y');
 </script>
-
 <body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  @font-face { font-family: 'Coolvetica'; src: url('fonts/Coolvetica Rg.otf') format('opentype'); font-weight: normal; font-style: normal; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Roboto', Arial, sans-serif; background: #ffffff; color: #111827; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; }
+  a { color: #4f46e5; text-decoration: none; }
+  a:hover { color: #4338ca; }
+  ::selection { background: #e0e7ff; }
+  @keyframes lmBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes lmBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+</style>
+</helmet>
 
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#inicio" class="nav-logo">LM</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#sobre" data-i18n="nav-about" data-nav>Sobre</a></li>
-        <li><a href="#experiencia" data-i18n="nav-experience" data-nav>Experiência</a></li>
-        <li><a href="#skills" data-nav>Skills</a></li>
-        <li><a href="#projetos" data-i18n="nav-projects" data-nav>Projetos</a></li>
-        <li><a href="#contato" data-i18n="nav-contact" data-nav>Contato</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="lang-btn" id="langToggle" aria-label="Trocar idioma">
-          <span class="flag-icon">BR</span>
-          <span class="flag-icon">US</span>
-          <div class="toggle-slider"></div>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<div style="min-height: 100vh; background: #ffffff;">
+
+<nav style="position: fixed; top: 0; left: 0; right: 0; height: 64px; background: rgba(255,255,255,0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #e5e7eb; z-index: 999;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+    <a href="#inicio" style="font-family: 'Coolvetica', sans-serif; font-size: 1.4rem; color: #4f46e5; letter-spacing: 2px;">LM</a>
+    <div style="display: flex; align-items: center; gap: 2px;">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+        <a href="{{ n.href }}" style="color: #6b7280; font-size: 0.88rem; font-weight: 500; padding: 7px 12px; border-radius: 8px; transition: all 0.2s ease;" style-hover="color: #4f46e5; background: #eef2ff;">{{ n.label }}</a>
+      </sc-for>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="inicio">
-    <div class="hero-content">
-      <div class="hero-photo-wrap">
-        <div class="hero-initials" id="hero-initials">LM</div>
-        <img class="hero-photo-img" src="media/LM.jpeg" alt="Leonardo Mesquita"
-          onload="this.style.opacity='1'; document.getElementById('hero-initials').style.display='none';"
-          onerror="this.style.display='none';">
-      </div>
-      <p class="hero-greeting" data-i18n="hero-greeting">Olá, eu sou</p>
-      <h1 class="titulo-nome">Leonardo Mesquita</h1>
-      <p class="hero-subtitle">
-        <span id="typewriter"></span><span class="cursor">|</span>
-      </p>
-      <ul class="intro-social">
-        <li><a href="mailto:contatoleonaardo@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
-        <li><a href="https://github.com/SrMesquitaa" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/leonardo-mesquitaa/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-        <li><a id="cv-download-link" href="media/Leonardo_Mesquita - Analista de Dados.pdf" download aria-label="Download CV"><i class="fas fa-file-pdf"></i></a></li>
-      </ul>
-      <a href="#sobre" class="hero-scroll-btn" aria-label="Rolar para baixo">
-        <i class="fas fa-chevron-down"></i>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="{{ cvHref }}" download="download" style="display: inline-flex; align-items: center; gap: 7px; background: #4f46e5; color: #fff; font-size: 0.82rem; font-weight: 600; padding: 8px 15px; border-radius: 8px; transition: background 0.2s ease;" style-hover="background: #4338ca; color: #fff;">
+        <i class="fas fa-download" style="font-size: 0.75rem;"></i>{{ t.cv }}
       </a>
+      <button onClick="{{ toggleLang }}" aria-label="Trocar idioma" style="border: 1px solid #d1d5db; background: #fff; color: #374151; font-family: 'Roboto', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.6px; padding: 8px 11px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" style-hover="border-color: #4f46e5; color: #4f46e5;">{{ t.langSwitch }}</button>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- Sobre -->
-  <section id="sobre" class="fade-in">
-    <div class="section-inner">
-      <h2 data-i18n="about-me">Sobre mim</h2>
-      <p data-i18n="about-text">Engenheiro de Dados self-taught com experiência prática construindo infraestruturas de dados do zero em produção. Apaixonado por resolver problemas reais com tecnologia. Busco oportunidades internacionais para construir sistemas de dados robustos e escaláveis.</p>
+<section id="inicio" style="min-height: 100vh; padding: 64px 24px 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #ffffff; background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px;">
+  <div style="position: relative; width: 124px; height: 124px; border-radius: 50%; border: 3px solid #6366f1; box-shadow: 0 0 0 6px #eef2ff; margin-bottom: 24px; overflow: hidden; background: #eef2ff; flex-shrink: 0;">
+    <img src="media/LM.jpeg" alt="Leonardo Mesquita" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 45%; transform: scale(2); transform-origin: 48% 45%; border-radius: 50%;">
+  </div>
+  <p style="font-size: 0.82rem; color: #4f46e5; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 10px;">{{ t.greeting }}</p>
+  <h1 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(2.8rem, 8vw, 5.5rem); color: #111827; line-height: 1.1; margin: 0 0 14px; font-weight: 400;">Leonardo Mesquita</h1>
+  <p style="font-size: clamp(1.05rem, 2.6vw, 1.45rem); color: #374151; font-weight: 500; margin: 0 0 10px; min-height: 1.8rem;">{{ typed }}<span style="display: inline-block; color: #6366f1; font-weight: 300; margin-left: 2px; animation: lmBlink 1s step-end infinite;">|</span></p>
+  <p style="max-width: 620px; font-size: 1rem; color: #6b7280; line-height: 1.75; margin: 0 0 30px; text-wrap: pretty;">{{ t.heroPitch }}</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 34px;">
+    <sc-for list="{{ heroChips }}" as="c" hint-placeholder-count="3">
+      <span style="display: inline-flex; align-items: center; gap: 8px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 999px; padding: 7px 15px; font-size: 0.82rem; color: #374151;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: #6366f1;"></span>{{ c }}
+      </span>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; gap: 14px; margin-bottom: 46px;">
+    <sc-for list="{{ social }}" as="s" hint-placeholder-count="4">
+      <a href="{{ s.href }}" aria-label="{{ s.label }}" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #f9fafb; border: 1px solid #e5e7eb; color: #6b7280; font-size: 1.15rem; transition: all 0.2s ease;" style-hover="background: #4f46e5; border-color: #4f46e5; color: #fff; transform: translateY(-4px);">
+        <i class="{{ s.icon }}"></i>
+      </a>
+    </sc-for>
+  </div>
+
+  <a href="#impacto" aria-label="Rolar" style="color: #9ca3af; font-size: 1.25rem; animation: lmBounce 2s ease-in-out infinite;"><i class="fas fa-chevron-down"></i></a>
+</section>
+
+<section id="impacto" style="padding: 90px 24px; background: #0f0f14; scroll-margin-top: 64px;">
+  <div style="max-width: 1060px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 12px;">
+      <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #a5b4fc; margin: 0 0 12px;">{{ t.impactKicker }}</p>
+      <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.9rem, 4vw, 2.6rem); color: #fff; margin: 0 0 14px; font-weight: 400; letter-spacing: -0.3px;">{{ t.impactTitle }}</h2>
+      <p style="max-width: 620px; margin: 0 auto; color: #9ca3af; font-size: 0.95rem; line-height: 1.7;">{{ t.impactSub }}</p>
     </div>
-  </section>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 44px;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
+        <div style="background: #17171f; border: 1px solid #26262f; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.2s ease, transform 0.2s ease;" style-hover="border-color: #4f46e5; transform: translateY(-3px);">
+          <span style="font-family: 'Coolvetica', sans-serif; font-size: 2.7rem; line-height: 1; color: #a5b4fc; letter-spacing: -0.5px;">{{ m.figure }}</span>
+          <span style="font-size: 0.85rem; font-weight: 600; color: #f3f4f6;">{{ m.label }}</span>
+          <span style="font-size: 0.82rem; color: #8b8b99; line-height: 1.6; text-wrap: pretty;">{{ m.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
 
-  <!-- Experiência -->
-  <section id="experiencia" class="fade-in">
-    <div class="section-inner">
-      <h2 data-i18n="exp-title">Experiência</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-badge">
-            <i class="fas fa-briefcase"></i>
+<section id="sobre" style="padding: 90px 24px; background: #f9fafb; scroll-margin-top: 64px;">
+  <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+    <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.aboutTitle }}</h2>
+    <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 28px; border-radius: 2px;"></div>
+    <p style="font-size: 1.08rem; color: #4b5563; line-height: 1.85; margin: 0 0 18px; text-wrap: pretty;">{{ t.aboutP1 }}</p>
+    <p style="font-size: 1.08rem; color: #4b5563; line-height: 1.85; margin: 0; text-wrap: pretty;">{{ t.aboutP2 }}</p>
+  </div>
+</section>
+
+<section id="experiencia" style="padding: 90px 24px; background: #ffffff; scroll-margin-top: 64px;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div style="text-align: center;">
+      <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.expTitle }}</h2>
+      <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 0; border-radius: 2px;"></div>
+    </div>
+    <div style="max-width: 760px; margin: 44px auto 0; display: flex; flex-direction: column; gap: 24px;">
+      <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="2">
+        <div style="position: relative; padding-left: 60px;">
+          <div style="position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%; background: #eef2ff; border: 2px solid #6366f1; display: flex; align-items: center; justify-content: center; color: #4f46e5;">
+            <i class="{{ j.icon }}"></i>
           </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 data-i18n="exp-role">Data Engineer</h3>
-              <span class="timeline-company" data-i18n="exp-company">Amels Conceito · Fortaleza, CE</span>
-              <span class="timeline-period" data-i18n="exp-period">2024 — Presente</span>
+          <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 20px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin: 0 0 4px;">{{ j.role }}</h3>
+            <span style="font-size: 0.9rem; color: #4f46e5; font-weight: 600; display: block;">{{ j.company }}</span>
+            <span style="font-size: 0.78rem; color: #6b7280; font-weight: 500; letter-spacing: 0.3px; display: block; margin-bottom: 20px;">{{ j.period }}</span>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ j.bullets }}" as="b" hint-placeholder-count="5">
+                <div style="display: grid; grid-template-columns: 16px 1fr; gap: 10px; align-items: start;">
+                  <span style="color: #6366f1; font-size: 0.8rem; line-height: 1.7;">▹</span>
+                  <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.7; margin: 0; text-wrap: pretty;">{{ b }}</p>
+                </div>
+              </sc-for>
             </div>
-            <ul class="timeline-bullets">
-              <li data-i18n="exp-b1">Projetei e implantei do zero a arquitetura de medalhão no BigQuery</li>
-              <li data-i18n="exp-b2">Construí pipelines ETL automatizados rodando em produção com Python e Google Cloud</li>
-              <li data-i18n="exp-b3">Desenvolvi dashboards interativos em Streamlit e Power BI para análise operacional</li>
-              <li data-i18n="exp-b4">Criei formulário de captação de vendas em Next.js com autenticação via Clerk e hospedagem no Vercel, ambos no free tier</li>
-              <li data-i18n="exp-b5">Desenvolvi o Fast-Leads: sistema WhatsApp de distribuição de leads com round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API</li>
-            </ul>
-            <div class="timeline-stack">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">BigQuery</span>
-              <span class="tech-tag">Google Cloud</span>
-              <span class="tech-tag">Streamlit</span>
-              <span class="tech-tag">Power BI</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">AWS EC2</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 20px; margin-top: 20px; border-top: 1px solid #e5e7eb;">
+              <sc-for list="{{ j.stack }}" as="s" hint-placeholder-count="6">
+                <span style="background: #eef2ff; color: #4f46e5; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">{{ s }}</span>
+              </sc-for>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </sc-for>
 
-  <!-- Skills -->
-  <section id="skills" class="fade-in">
-    <div class="section-inner">
-      <h2 data-i18n="skills-title">Habilidades</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3 data-i18n="skills-data">Engenharia de Dados</h3>
-          <div class="skill-tags">
-            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-            <span class="skill-tag"><i class="fas fa-database"></i> BigQuery</span>
-            <span class="skill-tag"><i class="fas fa-exchange-alt"></i> ETL</span>
-            <span class="skill-tag"><i class="fas fa-code"></i> SQL</span>
-            <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-left: 60px;">
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 22px 24px;">
+          <h4 style="font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4f46e5; margin: 0 0 12px;">{{ t.eduTitle }}</h4>
+          <p style="font-size: 0.92rem; font-weight: 600; color: #111827; margin: 0 0 4px;">{{ t.eduCourse }}</p>
+          <p style="font-size: 0.84rem; color: #6b7280; margin: 0; line-height: 1.6;">{{ t.eduSchool }}</p>
         </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills-cloud">Cloud & Infraestrutura</h3>
-          <div class="skill-tags">
-            <span class="skill-tag"><i class="fab fa-google"></i> Google Cloud</span>
-            <span class="skill-tag"><i class="fab fa-aws"></i> AWS EC2</span>
-            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-            <span class="skill-tag"><i class="fas fa-terminal"></i> Linux</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills-analytics">Analytics & BI</h3>
-          <div class="skill-tags">
-            <span class="skill-tag"><i class="fas fa-chart-line"></i> Streamlit</span>
-            <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
-            <span class="skill-tag"><i class="fas fa-table"></i> DAX</span>
-            <span class="skill-tag"><i class="fas fa-layer-group"></i> Next.js</span>
-          </div>
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 22px 24px;">
+          <h4 style="font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4f46e5; margin: 0 0 12px;">{{ t.langTitle }}</h4>
+          <p style="font-size: 0.88rem; color: #4b5563; margin: 0; line-height: 1.7; text-wrap: pretty;">{{ t.langBody }}</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Projetos -->
-  <section id="projetos" class="fade-in">
-    <div class="section-inner">
-      <h2 data-i18n="projects">Projetos</h2>
-      <div class="cards-row">
-        <div class="card-wrap">
-          <div class="card-header one">
-            <i class="fas fa-database"></i>
-          </div>
-          <div class="card-content">
-            <div class="card-title" data-i18n="data-platform">Plataforma de Dados</div>
-            <div class="card-text" data-i18n="data-platform-desc">Arquitetura BigQuery Bronze/Silver/Gold com pipelines ETL em produção.</div>
-            <button class="card-btn one" data-i18n="see-more">Ver mais</button>
-          </div>
-        </div>
-        <div class="card-wrap">
-          <div class="card-header two">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div class="card-content">
-            <div class="card-title" data-i18n="fastleads">Fast-Leads Bot</div>
-            <div class="card-text" data-i18n="fastleads-desc">Distribuição de leads via WhatsApp com round-robin e monitoramento 24/7.</div>
-            <button class="card-btn two" data-i18n="see-more">Ver mais</button>
-          </div>
-        </div>
-        <div class="card-wrap">
-          <div class="card-header three">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="card-content">
-            <div class="card-title" data-i18n="bi-analytics">BI & Analytics</div>
-            <div class="card-text" data-i18n="bi-analytics-desc">Dashboards Streamlit e Power BI para análise operacional.</div>
-            <button class="card-btn three" data-i18n="see-more">Ver mais</button>
-          </div>
-        </div>
-      </div>
+<section id="projetos" style="padding: 90px 24px; background: #f9fafb; scroll-margin-top: 64px;">
+  <div style="max-width: 1060px; margin: 0 auto;">
+    <div style="text-align: center;">
+      <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.projTitle }}</h2>
+      <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 12px; border-radius: 2px;"></div>
+      <p style="color: #6b7280; font-size: 0.95rem; margin: 0;">{{ t.projSub }}</p>
     </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="fade-in">
-    <div class="section-inner">
-      <h2 data-i18n="contact">Contato</h2>
-      <p>Email: <a href="mailto:contatoleonaardo@gmail.com">contatoleonaardo@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/leonardo-mesquitaa/" aria-label="Perfil do LinkedIn">linkedin.com/in/leonardo-mesquitaa</a></p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 44px;">
+      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="5">
+        <button onClick="{{ c.open }}" style="text-align: left; font-family: 'Roboto', sans-serif; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 26px 24px; cursor: pointer; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 18px 40px rgba(17,24,39,0.10); border-color: #c7d2fe;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="width: 44px; height: 44px; border-radius: 12px; background: #eef2ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;"><i class="{{ c.icon }}"></i></span>
+            <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #9ca3af;">{{ c.kicker }}</span>
+          </div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: #111827; margin: 4px 0 0; line-height: 1.35;">{{ c.title }}</h3>
+          <p style="font-size: 0.86rem; color: #6b7280; line-height: 1.65; margin: 0; text-wrap: pretty;">{{ c.blurb }}</p>
+          <span style="font-size: 0.8rem; font-weight: 600; color: #4f46e5; margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 6px;">{{ t.seeMore }} <i class="fas fa-arrow-right" style="font-size: 0.7rem;"></i></span>
+        </button>
+      </sc-for>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Leonardo Mesquita. Todos os direitos reservados.</p>
-  </footer>
+<section id="skills" style="padding: 90px 24px; background: #ffffff; scroll-margin-top: 64px;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div style="text-align: center;">
+      <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.skillsTitle }}</h2>
+      <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 0; border-radius: 2px;"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 44px;">
+      <sc-for list="{{ skills }}" as="g" hint-placeholder-count="3">
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow: 0 10px 26px rgba(17,24,39,0.08); transform: translateY(-3px);">
+          <h3 style="font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4f46e5; margin: 0 0 16px;">{{ g.title }}</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <sc-for list="{{ g.items }}" as="s" hint-placeholder-count="5">
+              <span style="display: inline-flex; align-items: center; gap: 6px; background: #eef2ff; color: #4f46e5; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 8px;">
+                <i class="{{ s.icon }}"></i>{{ s.name }}
+              </span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
 
-  <!-- Modal: Data Platform -->
-  <div id="dp-modal" class="carrossel-overlay" style="display: none;">
-    <div class="carrossel-content modal-project">
-      <button class="carrossel-close" aria-label="Fechar">&times;</button>
-      <div class="modal-proj-header">
-        <div class="modal-proj-icon dp-icon"><i class="fas fa-database"></i></div>
+<section id="contato" style="padding: 90px 24px; background: #f9fafb; scroll-margin-top: 64px;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.contactTitle }}</h2>
+    <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 22px; border-radius: 2px;"></div>
+    <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.8; margin: 0 0 28px; text-wrap: pretty;">{{ t.contactSub }}</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+      <a href="mailto:contatoleonaardo@gmail.com" style="display: inline-flex; align-items: center; gap: 9px; background: #4f46e5; color: #fff; font-size: 0.92rem; font-weight: 600; padding: 13px 24px; border-radius: 10px; transition: background 0.2s ease;" style-hover="background: #4338ca; color: #fff;"><i class="fas fa-envelope"></i>contatoleonaardo@gmail.com</a>
+      <a href="https://www.linkedin.com/in/leonardo-mesquitaa/" style="display: inline-flex; align-items: center; gap: 9px; background: #fff; border: 1px solid #d1d5db; color: #374151; font-size: 0.92rem; font-weight: 600; padding: 13px 24px; border-radius: 10px; transition: all 0.2s ease;" style-hover="border-color: #4f46e5; color: #4f46e5;"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="https://github.com/SrMesquitaa" style="display: inline-flex; align-items: center; gap: 9px; background: #fff; border: 1px solid #d1d5db; color: #374151; font-size: 0.92rem; font-weight: 600; padding: 13px 24px; border-radius: 10px; transition: all 0.2s ease;" style-hover="border-color: #4f46e5; color: #4f46e5;"><i class="fab fa-github"></i>GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 26px 24px; background: #111827; color: rgba(255,255,255,0.75); font-size: 0.85rem;">
+  <p style="margin: 0;">© 2025 Leonardo Mesquita. {{ t.rights }}</p>
+</footer>
+
+<sc-if value="{{ active }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeOnBackdrop }}" style="position: fixed; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 1100; padding: 20px;">
+    <div data-modal="1" style="background: #fff; border-radius: 20px; padding: 36px; max-width: 860px; width: 100%; max-height: 88vh; overflow-y: auto; position: relative; box-shadow: 0 24px 60px rgba(0,0,0,0.28);">
+      <button onClick="{{ close }}" aria-label="Fechar" style="position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 26px; line-height: 1; cursor: pointer; color: #9ca3af;" style-hover="color: #111827;">×</button>
+
+      <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 20px; padding-right: 32px;">
+        <span style="width: 56px; height: 56px; border-radius: 14px; background: #eef2ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; flex-shrink: 0;"><i class="{{ active.icon }}"></i></span>
         <div>
-          <h2>BigQuery Data Platform</h2>
-          <p class="modal-proj-company">Amels Conceito · Fortaleza, Brazil</p>
+          <h2 style="font-size: 1.4rem; font-weight: 700; color: #111827; margin: 0;">{{ active.title }}</h2>
+          <p style="font-size: 0.85rem; color: #4f46e5; font-weight: 500; margin: 3px 0 0;">{{ active.subtitle }}</p>
         </div>
       </div>
-      <p class="modal-proj-desc">Built the entire data infrastructure from zero for a Hapvida sales operation — ingestion, transformation, and analytics layers, fully automated and running in production.</p>
-      <div class="arch-diagram">
-        <div class="arch-layer bronze">
-          <i class="fas fa-inbox"></i>
-          <strong>Bronze</strong>
-          <span>Raw ingestion</span>
-        </div>
-        <i class="fas fa-long-arrow-alt-right arch-arrow"></i>
-        <div class="arch-layer silver">
-          <i class="fas fa-filter"></i>
-          <strong>Silver</strong>
-          <span>Cleaned & validated</span>
-        </div>
-        <i class="fas fa-long-arrow-alt-right arch-arrow"></i>
-        <div class="arch-layer gold">
-          <i class="fas fa-chart-bar"></i>
-          <strong>Gold</strong>
-          <span>Analytics ready</span>
-        </div>
-      </div>
-      <h4 class="modal-section-label">Key deliverables</h4>
-      <ul class="modal-bullets">
-        <li>Designed the Bronze/Silver/Gold medallion architecture on BigQuery from scratch</li>
-        <li>Built automated ETL pipelines in Python, scheduled and running in production</li>
-        <li>Deployed on Google Cloud with monitoring, alerting and cost optimization</li>
-        <li>Integrated with Streamlit dashboards for real-time operational visibility</li>
-      </ul>
-      <div class="projeto-tecnologias">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">BigQuery</span>
-        <span class="tech-tag">Google Cloud</span>
-        <span class="tech-tag">ETL</span>
-        <span class="tech-tag">SQL</span>
-        <span class="tech-tag">Docker</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- Modal: Fast-Leads -->
-  <div id="fl-modal" class="carrossel-overlay" style="display: none;">
-    <div class="carrossel-content modal-project">
-      <button class="carrossel-close" aria-label="Fechar">&times;</button>
-      <div class="modal-proj-header">
-        <div class="modal-proj-icon fl-icon"><i class="fas fa-bolt"></i></div>
-        <div>
-          <h2>Fast-Leads Bot</h2>
-          <p class="modal-proj-company">WhatsApp lead distribution system</p>
-        </div>
-      </div>
-      <p class="modal-proj-desc">Automated system that receives incoming sales leads and distributes them in real-time to sales agents via WhatsApp — with smart round-robin logic, duplicate filtering, and 24/7 uptime monitoring.</p>
-      <h4 class="modal-section-label">How it works</h4>
-      <ul class="modal-bullets">
-        <li><strong>Round-robin:</strong> Distributes leads evenly and fairly across all active agents</li>
-        <li><strong>Duplicate cache:</strong> Detects and filters already-processed leads in real time</li>
-        <li><strong>24/7 Sentinel:</strong> Monitors process health and auto-restarts on failure</li>
-        <li><strong>Containerized:</strong> Runs on Docker + AWS EC2 via Evolution API</li>
-      </ul>
-      <div class="projeto-tecnologias">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Docker</span>
-        <span class="tech-tag">Evolution API</span>
-        <span class="tech-tag">AWS EC2</span>
-        <span class="tech-tag">WhatsApp</span>
-      </div>
-      <div class="private-badge">
-        <i class="fas fa-lock"></i>
-        <span>Private repository — planning to commercialize</span>
-      </div>
-    </div>
-  </div>
+      <p style="font-size: 0.95rem; color: #4b5563; line-height: 1.8; margin: 0 0 24px; text-wrap: pretty;">{{ active.desc }}</p>
 
-  <!-- Modal: BI & Analytics -->
-  <div id="bi-modal" class="carrossel-overlay" style="display: none;">
-    <div class="carrossel-content">
-      <button class="carrossel-close" aria-label="Fechar">&times;</button>
-      <div class="carrossel-wrapper">
-        <div class="projeto-card">
-          <div class="projeto-imagem">
-            <img src="media/analise_uber.png" alt="Dashboard Uber Performance" />
-          </div>
-          <div class="projeto-info">
-            <h3 data-i18n="uber-performance">Uber Performance</h3>
-            <p data-i18n="uber-description">Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.</p>
-            <div class="projeto-tecnologias">
-              <span class="tech-tag">Power BI</span>
-              <span class="tech-tag">DAX</span>
-              <span class="tech-tag">Análise de Performance</span>
+      <sc-if value="{{ active.hasMetrics }}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 26px;">
+          <sc-for list="{{ active.metrics }}" as="m" hint-placeholder-count="2">
+            <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px;">
+              <div style="font-family: 'Coolvetica', sans-serif; font-size: 1.7rem; color: #4f46e5; line-height: 1.1;">{{ m.figure }}</div>
+              <div style="font-size: 0.78rem; color: #6b7280; margin-top: 4px; line-height: 1.45;">{{ m.label }}</div>
             </div>
-            <button class="projeto-btn"
-              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')"
-              data-i18n="see-dashboard">Ver Dashboard</button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-for list="{{ active.blocks }}" as="bl" hint-placeholder-count="2">
+        <div style="margin-bottom: 24px;">
+          <h4 style="font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4f46e5; margin: 0 0 12px;">{{ bl.label }}</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ bl.items }}" as="it" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 16px 1fr; gap: 10px; align-items: start;">
+                <span style="color: #6366f1; font-size: 0.8rem; line-height: 1.7;">▹</span>
+                <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.7; margin: 0; text-wrap: pretty;">{{ it }}</p>
+              </div>
+            </sc-for>
           </div>
         </div>
-        <div class="projeto-card">
-          <div class="projeto-imagem">
-            <img src="media/analise_gov.png" alt="Dashboard Análise de Sazonalidade" />
-          </div>
-          <div class="projeto-info">
-            <h3 data-i18n="seasonality-analysis">Análise de Sazonalidade no Brasil</h3>
-            <p data-i18n="seasonality-description">Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.</p>
-            <div class="projeto-tecnologias">
-              <span class="tech-tag">Power BI</span>
-              <span class="tech-tag">DAX</span>
-              <span class="tech-tag">Análise Temporal</span>
+      </sc-for>
+
+      <sc-if value="{{ active.hasDashboards }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+          <sc-for list="{{ active.dashboards }}" as="d" hint-placeholder-count="2">
+            <div style="display: flex; gap: 20px; align-items: center; padding: 18px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; flex-wrap: wrap;">
+              <img src="{{ d.img }}" alt="{{ d.title }}" style="width: 150px; height: 110px; object-fit: cover; border-radius: 10px; flex-shrink: 0; background: #eef2ff;">
+              <div style="flex: 1; min-width: 220px;">
+                <h3 style="font-size: 1.02rem; font-weight: 600; color: #111827; margin: 0 0 6px;">{{ d.title }}</h3>
+                <p style="font-size: 0.85rem; color: #6b7280; line-height: 1.6; margin: 0 0 12px; text-wrap: pretty;">{{ d.desc }}</p>
+                <a href="{{ d.url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 7px; background: #4f46e5; color: #fff; font-size: 0.82rem; font-weight: 600; padding: 9px 18px; border-radius: 8px;" style-hover="background: #4338ca; color: #fff;">{{ t.seeDashboard }} <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>
+              </div>
             </div>
-            <button class="projeto-btn"
-              onclick="window.open('https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9', '_blank')"
-              data-i18n="see-dashboard">Ver Dashboard</button>
-          </div>
+          </sc-for>
         </div>
+      </sc-if>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <sc-for list="{{ active.stack }}" as="s" hint-placeholder-count="5">
+          <span style="background: #eef2ff; color: #4f46e5; padding: 5px 11px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">{{ s }}</span>
+        </sc-for>
       </div>
+
+      <sc-if value="{{ active.note }}" hint-placeholder-val="{{ false }}">
+        <div style="display: inline-flex; align-items: center; gap: 9px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 16px; font-size: 0.82rem; color: #6b7280; margin-top: 20px;">
+          <i class="fas fa-lock" style="color: #6366f1;"></i>{{ active.note }}
+        </div>
+      </sc-if>
     </div>
   </div>
+</sc-if>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner" style="display: none;">
-    <p data-i18n="cookie-text">Usamos Google Analytics para entender como você navega por aqui. Tudo bem?</p>
-    <div class="cookie-actions">
-      <button class="cookie-btn cookie-decline" id="cookieDecline" data-i18n="cookie-decline">Recusar</button>
-      <button class="cookie-btn cookie-accept" id="cookieAccept" data-i18n="cookie-accept">Aceitar</button>
+<sc-if value="{{ cookieVisible }}" hint-placeholder-val="{{ false }}">
+  <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; background: #111827; color: #fff; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; box-shadow: 0 -4px 20px rgba(0,0,0,0.2);">
+    <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.85); max-width: 480px;">{{ t.cookieText }}</p>
+    <div style="display: flex; gap: 10px;">
+      <button onClick="{{ declineCookies }}" style="background: transparent; border: 1px solid rgba(255,255,255,0.35); color: #fff; font-size: 0.82rem; font-weight: 600; padding: 8px 16px; border-radius: 8px; cursor: pointer;" style-hover="border-color: #fff;">{{ t.cookieDecline }}</button>
+      <button onClick="{{ acceptCookies }}" style="background: #4f46e5; border: none; color: #fff; font-size: 0.82rem; font-weight: 600; padding: 8px 16px; border-radius: 8px; cursor: pointer;" style-hover="background: #4338ca;">{{ t.cookieAccept }}</button>
     </div>
   </div>
+</sc-if>
 
-  <script>
-    const resources = {
-      pt: {
-        translation: {
-          "hero-greeting": "Olá, eu sou",
-          "nav-about": "Sobre",
-          "nav-experience": "Experiência",
-          "nav-projects": "Projetos",
-          "nav-contact": "Contato",
-          "about-me": "Sobre mim",
-          "about-text": "Engenheiro de Dados self-taught com experiência prática construindo infraestruturas de dados do zero em produção. Apaixonado por resolver problemas reais com tecnologia. Busco oportunidades internacionais para construir sistemas de dados robustos e escaláveis.",
-          "exp-title": "Experiência",
-          "exp-role": "Data Engineer",
-          "exp-company": "Amels Conceito · Fortaleza, CE",
-          "exp-period": "2024 — Presente",
-          "exp-b1": "Projetei e implantei do zero a arquitetura de dados Bronze/Silver/Gold no BigQuery",
-          "exp-b2": "Construí pipelines ETL automatizados rodando em produção com Python e Google Cloud",
-          "exp-b3": "Desenvolvi dashboards interativos em Streamlit e Power BI para análise operacional",
-          "exp-b4": "Criei formulário de captação de vendas em Next.js 15 com autenticação via Clerk",
-          "exp-b5": "Desenvolvi o Fast-Leads: sistema WhatsApp de distribuição de leads com round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API",
-          "skills-title": "Habilidades",
-          "skills-data": "Engenharia de Dados",
-          "skills-cloud": "Cloud & Infraestrutura",
-          "skills-analytics": "Analytics & BI",
-          "projects": "Projetos",
-          "data-platform": "Plataforma de Dados",
-          "data-platform-desc": "Arquitetura BigQuery Bronze/Silver/Gold com pipelines ETL automatizados em produção.",
-          "fastleads": "Fast-Leads Bot",
-          "fastleads-desc": "Distribuição de leads via WhatsApp com round-robin e monitoramento 24/7 em Docker.",
-          "bi-analytics": "BI & Analytics",
-          "bi-analytics-desc": "Dashboards Streamlit e Power BI para análise operacional e tomada de decisão.",
-          "see-more": "Ver mais",
-          "contact": "Contato",
-          "uber-performance": "Uber Performance",
-          "uber-description": "Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.",
-          "seasonality-analysis": "Análise de Sazonalidade no Brasil",
-          "seasonality-description": "Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.",
-          "see-dashboard": "Ver Dashboard",
-          "cookie-text": "Usamos Google Analytics para entender como você navega por aqui. Tudo bem?",
-          "cookie-accept": "Aceitar",
-          "cookie-decline": "Recusar"
-        }
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const CV_PT = "https://srmesquitaa.github.io/media/CV-Leonardo-Mesquita-FULL-PT.pdf";
+const CV_EN = "https://srmesquitaa.github.io/media/CV-Leonardo-Mesquita-FULL-EN.pdf";
+
+const DICT = {
+  pt: {
+    langSwitch: "EN", cv: "Baixar CV", seeMore: "Ver detalhes", seeDashboard: "Ver dashboard",
+    rights: "Todos os direitos reservados.",
+    nav: [["#sobre","Sobre"],["#experiencia","Experiência"],["#projetos","Projetos"],["#skills","Skills"],["#contato","Contato"]],
+    greeting: "Olá, eu sou",
+    typed: ["Engenheiro de Dados", "Python & BigQuery", "Pipelines ETL em produção", "Self-taught Builder"],
+    heroPitch: "Construo e mantenho a infraestrutura de dados de uma operação de vendas em produção, do ingest ao dashboard. Diagnostico o que está caro, quebrado ou lento, e conserto.",
+    heroChips: ["Fortaleza, CE, aberto a remoto", "Inglês para trabalho técnico", "Disponível para novas oportunidades"],
+    impactKicker: "Resultados em produção",
+    impactTitle: "O que eu entreguei",
+    impactSub: "Números de sistemas reais, rodando hoje, com usuários dentro.",
+    metrics: [
+      { figure: "+83%", label: "volume de dados capturados", desc: "Motor de extração automatizado em Python no lugar de um processo manual, com 100% de integridade mantida." },
+      { figure: "90 mil+", label: "linhas migradas para o BigQuery", desc: "Saída de Google Sheets para um Data Warehouse em camadas Bronze/Silver/Gold, com ingestão automatizada." },
+      { figure: "−99%", label: "execuções de job desperdiçadas", desc: "Job diário disparando de 8.000 a 14.000 execuções por dia em vez das ~600 esperadas. O pico de 1.055 jobs/hora caiu para 6–12/hora." },
+      { figure: "2.500+", label: "visitantes/mês na plataforma que mantenho", desc: "Plataforma de vendas em produção: ~28.600 page views/mês, 68% via mobile, usada diariamente pelo time comercial em campo." }
+    ],
+    aboutTitle: "Sobre mim",
+    aboutP1: "Engenheiro de Dados self-taught com experiência prática construindo infraestruturas de dados do zero em produção. Apaixonado por resolver problemas reais com tecnologia. Busco oportunidades internacionais para construir sistemas de dados robustos e escaláveis.",
+    aboutP2: "Meu principal diferencial é a habilidade de conectar a área técnica aos objetivos do negócio. Atuo como um facilitador entre os dados e as áreas não técnicas, eliminando jargões para entender as reais necessidades da liderança. Meu maior valor agregado é construir a ponte que transforma dados brutos em decisões estratégicas assertivas.",
+    expTitle: "Experiência",
+    jobs: [
+      {
+        icon: "fas fa-briefcase", role: "Analista de BI", company: "Amel's Conceito · Fortaleza, CE", period: "Jan 2026 - Presente",
+        bullets: [
+          "Migrei a infraestrutura de dados de Google Sheets (90 mil+ linhas) para um Data Warehouse em BigQuery, projetando e documentando a arquitetura em camadas Bronze/Silver/Gold",
+          "Construí pipelines de ingestão em Python (Pandas, Requests) integrando múltiplas fontes via APIs REST (Google Drive, Telegram e CRM)",
+          "Aumentei em 83% o volume de dados capturados com 100% de integridade, substituindo um processo manual por extração automatizada com validação, logging estruturado e monitoramento",
+          "Diagnostiquei e corrigi um job em loop que executava de 8.000 a 14.000 vezes por dia contra as ~600 previstas, derrubando o pico de 1.055 para 6–12 execuções por hora",
+          "Estruturei KPIs e dashboards em Power BI (DAX, Power Query/M) em DirectQuery sobre o BigQuery, consumidos semanalmente por Diretoria e Supervisores",
+          "Desenvolvi o Fast-Leads: sistema WhatsApp de distribuição de leads com round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API"
+        ],
+        stack: ["Python","BigQuery","Google Cloud","Power BI","DAX","Streamlit","Docker","AWS EC2"]
       },
-      en: {
-        translation: {
-          "hero-greeting": "Hi, I'm",
-          "nav-about": "About",
-          "nav-experience": "Experience",
-          "nav-projects": "Projects",
-          "nav-contact": "Contact",
-          "about-me": "About me",
-          "about-text": "Self-taught Data Engineer with hands-on experience building data infrastructures from scratch in production. Passionate about solving real-world problems with technology. Seeking international opportunities to build robust, scalable data systems.",
-          "exp-title": "Experience",
-          "exp-role": "Data Engineer",
-          "exp-company": "Amels Conceito · Fortaleza, Brazil",
-          "exp-period": "2024 — Present",
-          "exp-b1": "Designed and built from scratch a Bronze/Silver/Gold data architecture on BigQuery",
-          "exp-b2": "Built automated ETL pipelines running in production using Python and Google Cloud",
-          "exp-b3": "Developed interactive dashboards in Streamlit and Power BI for operational analytics",
-          "exp-b4": "Built a Next.js 15 sales capture form with Clerk authentication",
-          "exp-b5": "Developed Fast-Leads: a WhatsApp lead distribution system with round-robin, duplicate cache and 24/7 sentinel using Docker + Evolution API",
-          "skills-title": "Skills",
-          "skills-data": "Data Engineering",
-          "skills-cloud": "Cloud & Infrastructure",
-          "skills-analytics": "Analytics & BI",
-          "projects": "Projects",
-          "data-platform": "Data Platform",
-          "data-platform-desc": "BigQuery Bronze/Silver/Gold architecture with automated ETL pipelines in production.",
-          "fastleads": "Fast-Leads Bot",
-          "fastleads-desc": "WhatsApp lead distribution with round-robin and 24/7 Docker monitoring.",
-          "bi-analytics": "BI & Analytics",
-          "bi-analytics-desc": "Streamlit and Power BI dashboards for operational analytics and decision-making.",
-          "see-more": "See more",
-          "contact": "Contact",
-          "uber-performance": "Uber Performance",
-          "uber-description": "Complete analysis of Uber performance, including trip metrics, revenue, operational efficiency and business insights for strategy optimization.",
-          "seasonality-analysis": "Seasonality Analysis in Brazil",
-          "seasonality-description": "Interactive dashboard analyzing seasonal patterns and temporal trends in Brazilian data. Visualization of strategic insights with dynamic filters and regional drill-down.",
-          "see-dashboard": "See Dashboard",
-          "cookie-text": "We use Google Analytics to understand how you browse this portfolio. That OK?",
-          "cookie-accept": "Accept",
-          "cookie-decline": "Decline"
-        }
+      {
+        icon: "fas fa-chart-bar", role: "Assistente de Dados Júnior", company: "Grupo Vilarouca · Brasil", period: "Jul 2024 - Fev 2025",
+        bullets: [
+          "Executei ETL completo com Python e Selenium: extração, consolidação e garantia de qualidade de dados",
+          "Desenvolvi dashboards em Power BI para performance de vendas, estoque e métricas de negócio",
+          "Automatizei processos com Python, RPA e Power Automate, reduzindo trabalho manual"
+        ],
+        stack: ["Python","Selenium","Power BI","RPA","Power Automate"]
       }
-    };
+    ],
+    eduTitle: "Formação", eduCourse: "Superior de Tecnologia em Cibersegurança", eduSchool: "Universidade Cruzeiro do Sul · 2026 - 2028 (em andamento)",
+    langTitle: "Idiomas", langBody: "Português nativo. Inglês avançado: leitura de documentação técnica e comunicação profissional.",
+    projTitle: "Projetos", projSub: "Cinco entregas em produção. Clique para ver problema, ação e resultado.",
+    skillsTitle: "Habilidades",
+    contactTitle: "Contato",
+    contactSub: "Aberto a posições remotas de Data Engineer. Respondo em até 24h.",
+    cookieText: "Usamos cookies para entender como você navega por aqui. Tudo bem?",
+    cookieAccept: "Aceitar",
+    cookieDecline: "Recusar",
+    cases: [
+      {
+        icon: "fas fa-fire-alt", kicker: "Incidente · Custo", title: "Job em loop no BigQuery",
+        subtitle: "Diagnóstico e correção em produção",
+        blurb: "Um job diário executando até 14.000 vezes por dia. Encontrei a causa e cortei 99% das execuções.",
+        desc: "Um job programado para rodar cerca de 600 vezes por dia estava disparando entre 8.000 e 14.000 execuções diárias, com pico de 1.055 execuções em uma única hora. Rastreei a origem no agendamento e no comportamento de reentrada do pipeline e corrigi.",
+        metrics: [ { figure: "1.055 → 6–12", label: "execuções por hora, no pico" }, { figure: "14.000 → ~600", label: "execuções por dia" } ],
+        blocks: [
+          { label: "O que eu fiz", items: [
+            "Levantei o histórico de execuções por hora e por dia para separar o comportamento esperado do anômalo",
+            "Isolei a causa no disparo do job e no reprocessamento em cadeia que ele provocava",
+            "Corrigi o agendamento e a lógica de reentrada, e monitorei o volume até estabilizar",
+            "Deixei a contagem de execuções sob acompanhamento para pegar regressão cedo"
+          ] },
+          { label: "Resultado", items: [
+            "Pico horário caiu de 1.055 para 6–12 execuções",
+            "Volume diário voltou ao patamar previsto de aproximadamente 600 execuções",
+            "Redução direta de consumo de slots e do custo de processamento no BigQuery"
+          ] }
+        ],
+        stack: ["BigQuery","Python","Google Cloud","SQL"]
+      },
+      {
+        icon: "fas fa-exchange-alt", kicker: "Migração", title: "BigQuery → Postgres sem downtime",
+        subtitle: "Troca de base com a operação viva",
+        blurb: "Migração da camada de consumo com ~50 usuários dentro do sistema e zero interrupção.",
+        desc: "A camada de consumo precisava sair do BigQuery para o Postgres por custo e latência de consulta. A operação não podia parar: cerca de 50 pessoas usam o sistema ao longo do dia de vendas.",
+        metrics: [ { figure: "0", label: "minutos de downtime" }, { figure: "~50", label: "usuários ativos durante a troca" } ],
+        blocks: [
+          { label: "Como foi feito", items: [
+            "Espelhei o modelo de dados no Postgres e mantive os dois lados escrevendo em paralelo durante a transição",
+            "Validei a paridade dos números entre as duas bases antes de virar a chave",
+            "Virei o consumo por partes, com possibilidade de voltar atrás a qualquer momento",
+            "Acompanhei erro e latência nas primeiras horas após a virada"
+          ] },
+          { label: "Resultado", items: [
+            "Nenhuma interrupção percebida pelos usuários",
+            "Consultas operacionais mais rápidas e mais baratas no dia a dia"
+          ] }
+        ],
+        stack: ["Postgres","BigQuery","Python","SQL","Google Cloud"]
+      },
+      {
+        icon: "fas fa-database", kicker: "Plataforma", title: "Arquitetura de medalhão no BigQuery",
+        subtitle: "Amels Conceito · Fortaleza, CE",
+        blurb: "Bronze, Silver e Gold construídos do zero, com ETL automatizado e dedup em produção.",
+        desc: "Construí toda a infraestrutura de dados de uma operação de vendas a partir do zero: ingestão, transformação e camada analítica, automatizadas e rodando em produção.",
+        metrics: [ { figure: "694", label: "duplicatas removidas de 115 mil linhas" }, { figure: "3", label: "camadas: Bronze, Silver, Gold" } ],
+        blocks: [
+          { label: "Entregas", items: [
+            "Desenhei a arquitetura de medalhão Bronze/Silver/Gold no BigQuery do zero",
+            "Construí pipelines ETL em Python, agendados e rodando em produção",
+            "Implementei deduplicação que eliminou 694 registros duplicados de uma base de 115 mil linhas",
+            "Publiquei a camada Gold para os dashboards de Streamlit e Power BI consumirem"
+          ] }
+        ],
+        stack: ["Python","BigQuery","Google Cloud","ETL","SQL","Docker"]
+      },
+      {
+        icon: "fas fa-bolt", kicker: "Produto interno", title: "Fast-Leads Bot",
+        subtitle: "Distribuição de leads por WhatsApp",
+        blurb: "Round-robin, cache de duplicatas e sentinel 24/7 em Docker + Evolution API.",
+        desc: "Sistema automatizado que recebe leads de vendas e os distribui em tempo real para os vendedores via WhatsApp, com rodízio justo, filtro de duplicatas e monitoramento contínuo.",
+        blocks: [
+          { label: "Como funciona", items: [
+            "Round-robin: distribui os leads de forma equilibrada entre os vendedores ativos",
+            "Cache de duplicatas: detecta e filtra leads já processados em tempo real",
+            "Sentinel 24/7: monitora a saúde do processo e reinicia automaticamente em caso de falha",
+            "Containerizado: roda em Docker + AWS EC2 via Evolution API"
+          ] }
+        ],
+        stack: ["Python","Docker","Evolution API","AWS EC2","WhatsApp"],
+        note: "Repositório privado, em avaliação para comercialização"
+      },
+      {
+        icon: "fas fa-chart-line", kicker: "Analytics", title: "BI & Análise de produtividade",
+        subtitle: "Streamlit e Power BI",
+        blurb: "A análise que expôs 10.089 leads parados e a diferença de conversão entre vendedores.",
+        desc: "Dashboards operacionais em Streamlit e Power BI e a análise de produtividade comercial que sustentou decisões de gestão da carteira.",
+        metrics: [ { figure: "10.089", label: "leads parados identificados" }, { figure: "0,6% – 6,6%", label: "faixa de conversão entre vendedores" } ],
+        blocks: [
+          { label: "O que a análise mostrou", items: [
+            "10.089 leads sem qualquer movimentação, parados na carteira",
+            "Conversão variando de 0,6% a 6,6% entre vendedores atendendo o mesmo tipo de lead",
+            "Base para redistribuir carteira e priorizar leads com chance real de fechamento"
+          ] }
+        ],
+        stack: ["Streamlit","Power BI","DAX","Python","SQL"],
+        dashboards: [
+          { img: "media/analise_uber.png", title: "Uber Performance", desc: "Análise completa de performance da Uber, incluindo métricas de viagens, receita, eficiência operacional e insights de negócio para otimização de estratégias.", url: "https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" },
+          { img: "media/analise_gov.png", title: "Análise de Sazonalidade no Brasil", desc: "Dashboard interativo analisando padrões sazonais e tendências temporais em dados brasileiros. Visualização de insights estratégicos com filtros dinâmicos e drill-down por região.", url: "https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" }
+        ]
+      }
+    ],
+    skills: [
+      { title: "Engenharia de Dados", items: [["fab fa-python","Python"],["fas fa-database","BigQuery"],["fas fa-server","Postgres"],["fas fa-exchange-alt","ETL"],["fas fa-code","SQL"],["fab fa-docker","Docker"]] },
+      { title: "Cloud & Infraestrutura", items: [["fab fa-google","Google Cloud"],["fab fa-aws","AWS EC2"],["fab fa-git-alt","Git"],["fas fa-terminal","Linux"]] },
+      { title: "Analytics & BI", items: [["fas fa-chart-line","Streamlit"],["fas fa-chart-bar","Power BI"],["fas fa-table","DAX"],["fas fa-layer-group","Next.js"]] }
+    ]
+  },
+  en: {
+    langSwitch: "PT", cv: "Download CV", seeMore: "See details", seeDashboard: "Open dashboard",
+    rights: "All rights reserved.",
+    nav: [["#sobre","About"],["#experiencia","Experience"],["#projetos","Projects"],["#skills","Skills"],["#contato","Contact"]],
+    greeting: "Hi, I'm",
+    typed: ["Data Engineer", "Python & BigQuery", "ETL pipelines in production", "Self-taught Builder"],
+    heroPitch: "I build and run the data infrastructure behind a live sales operation, from ingestion to dashboard. I find what is expensive, broken or slow, and fix it.",
+    heroChips: ["Fortaleza, Brazil, open to remote", "English for technical work", "Available for new opportunities"],
+    impactKicker: "Results in production",
+    impactTitle: "What I have shipped",
+    impactSub: "Numbers from real systems, running today, with users inside them.",
+    metrics: [
+      { figure: "+83%", label: "data capture volume", desc: "An automated Python extraction engine replacing a manual process, with 100% data integrity held throughout." },
+      { figure: "90k+", label: "rows migrated to BigQuery", desc: "Off Google Sheets and into a layered Bronze/Silver/Gold data warehouse, with automated ingestion." },
+      { figure: "−99%", label: "wasted job runs", desc: "A daily job firing 8,000 to 14,000 times per day instead of the expected ~600. The 1,055 runs/hour peak dropped to 6–12/hour." },
+      { figure: "2,500+", label: "monthly visitors on the platform I run", desc: "A live sales platform: ~28,600 page views/month, 68% mobile, used daily by the field sales team." }
+    ],
+    aboutTitle: "About me",
+    aboutP1: "Self-taught Data Engineer with hands-on experience building data infrastructures from scratch in production. Passionate about solving real-world problems with technology. Seeking international opportunities to build robust, scalable data systems.",
+    aboutP2: "My main differentiator is the ability to connect the technical side with business objectives. I act as a facilitator between data and non-technical areas, cutting through jargon to understand leadership's real needs. My biggest value-add is building the bridge that turns raw data into confident, strategic decisions.",
+    expTitle: "Experience",
+    jobs: [
+      {
+        icon: "fas fa-briefcase", role: "BI Analyst", company: "Amel's Conceito · Fortaleza, Brazil", period: "Jan 2026 - Present",
+        bullets: [
+          "Migrated the company's data infrastructure from Google Sheets (90,000+ rows) into a BigQuery data warehouse, designing and documenting a Bronze/Silver/Gold layered architecture",
+          "Built ingestion pipelines in Python (Pandas, Requests) integrating multiple sources over REST APIs (Google Drive, Telegram and the CRM)",
+          "Increased captured data volume by 83% with 100% integrity, replacing a manual process with automated extraction backed by validation, structured logging and monitoring",
+          "Diagnosed and fixed a runaway job executing 8,000 to 14,000 times a day against the ~600 expected, cutting the peak from 1,055 to 6–12 runs per hour",
+          "Structured KPIs and Power BI dashboards (DAX, Power Query/M) in DirectQuery over BigQuery, reviewed weekly by directors and supervisors",
+          "Built Fast-Leads: a WhatsApp lead distribution system with round-robin, duplicate cache and a 24/7 sentinel on Docker + Evolution API"
+        ],
+        stack: ["Python","BigQuery","Google Cloud","Power BI","DAX","Streamlit","Docker","AWS EC2"]
+      },
+      {
+        icon: "fas fa-chart-bar", role: "Junior Data Assistant", company: "Grupo Vilarouca · Brazil", period: "Jul 2024 - Feb 2025",
+        bullets: [
+          "Ran full ETL with Python and Selenium: extraction, consolidation and data quality assurance",
+          "Built Power BI dashboards for sales performance, inventory and business metrics",
+          "Automated processes with Python, RPA and Power Automate, cutting manual work"
+        ],
+        stack: ["Python","Selenium","Power BI","RPA","Power Automate"]
+      }
+    ],
+    eduTitle: "Education", eduCourse: "BSc Technology in Cybersecurity", eduSchool: "Universidade Cruzeiro do Sul · 2026 - 2028 (in progress)",
+    langTitle: "Languages", langBody: "Portuguese native. English advanced: technical documentation and professional communication.",
+    projTitle: "Projects", projSub: "Five things running in production. Open one for problem, action and result.",
+    skillsTitle: "Skills",
+    contactTitle: "Contact",
+    contactSub: "Open to remote Data Engineer roles. I reply within 24 hours.",
+    cookieText: "We use cookies to understand how you browse this portfolio. That OK?",
+    cookieAccept: "Accept",
+    cookieDecline: "Decline",
+    cases: [
+      {
+        icon: "fas fa-fire-alt", kicker: "Incident · Cost", title: "Runaway BigQuery job",
+        subtitle: "Diagnosed and fixed in production",
+        blurb: "A daily job running up to 14,000 times a day. I found the cause and cut 99% of the runs.",
+        desc: "A job scheduled to run around 600 times a day was firing between 8,000 and 14,000 times daily, peaking at 1,055 executions in a single hour. I traced it to the scheduling and re-entry behaviour of the pipeline and fixed it.",
+        metrics: [ { figure: "1,055 → 6–12", label: "runs per hour, at peak" }, { figure: "14,000 → ~600", label: "runs per day" } ],
+        blocks: [
+          { label: "What I did", items: [
+            "Pulled execution history by hour and by day to separate expected behaviour from the anomaly",
+            "Isolated the cause in the job trigger and the chained reprocessing it set off",
+            "Fixed the schedule and the re-entry logic, then watched the volume until it settled",
+            "Left run counts under monitoring to catch regressions early"
+          ] },
+          { label: "Result", items: [
+            "Hourly peak dropped from 1,055 to 6–12 runs",
+            "Daily volume returned to the expected ~600 executions",
+            "Direct reduction in slot usage and BigQuery processing cost"
+          ] }
+        ],
+        stack: ["BigQuery","Python","Google Cloud","SQL"]
+      },
+      {
+        icon: "fas fa-exchange-alt", kicker: "Migration", title: "BigQuery → Postgres, zero downtime",
+        subtitle: "Swapping the database with the operation live",
+        blurb: "Migrated the consumption layer with ~50 users inside the system and no interruption.",
+        desc: "The consumption layer had to move off BigQuery to Postgres for cost and query latency. The operation could not stop: around 50 people use the system through the sales day.",
+        metrics: [ { figure: "0", label: "minutes of downtime" }, { figure: "~50", label: "active users during the switch" } ],
+        blocks: [
+          { label: "How it was done", items: [
+            "Mirrored the data model in Postgres and kept both sides written in parallel during the transition",
+            "Validated number-for-number parity between the two bases before switching over",
+            "Cut consumption over in stages, with the option to roll back at any point",
+            "Watched errors and latency closely through the first hours after cutover"
+          ] },
+          { label: "Result", items: [
+            "No interruption perceived by users",
+            "Faster and cheaper operational queries day to day"
+          ] }
+        ],
+        stack: ["Postgres","BigQuery","Python","SQL","Google Cloud"]
+      },
+      {
+        icon: "fas fa-database", kicker: "Platform", title: "Medallion architecture on BigQuery",
+        subtitle: "Amels Conceito · Fortaleza, Brazil",
+        blurb: "Bronze, Silver and Gold built from zero, with automated ETL and dedup in production.",
+        desc: "Built the entire data infrastructure for a sales operation from scratch: ingestion, transformation and analytics layers, fully automated and running in production.",
+        metrics: [ { figure: "694", label: "duplicates removed from 115,000 rows" }, { figure: "3", label: "layers: Bronze, Silver, Gold" } ],
+        blocks: [
+          { label: "Deliverables", items: [
+            "Designed the Bronze/Silver/Gold medallion architecture on BigQuery from scratch",
+            "Built ETL pipelines in Python, scheduled and running in production",
+            "Implemented deduplication that removed 694 duplicate records from a 115,000-row base",
+            "Published the Gold layer for the Streamlit and Power BI dashboards to consume"
+          ] }
+        ],
+        stack: ["Python","BigQuery","Google Cloud","ETL","SQL","Docker"]
+      },
+      {
+        icon: "fas fa-bolt", kicker: "Internal product", title: "Fast-Leads Bot",
+        subtitle: "WhatsApp lead distribution system",
+        blurb: "Round-robin, duplicate cache and a 24/7 sentinel on Docker + Evolution API.",
+        desc: "Automated system that receives incoming sales leads and distributes them in real time to sales agents via WhatsApp, with fair round-robin logic, duplicate filtering and continuous uptime monitoring.",
+        blocks: [
+          { label: "How it works", items: [
+            "Round-robin: distributes leads evenly and fairly across all active agents",
+            "Duplicate cache: detects and filters already-processed leads in real time",
+            "24/7 sentinel: monitors process health and auto-restarts on failure",
+            "Containerized: runs on Docker + AWS EC2 via Evolution API"
+          ] }
+        ],
+        stack: ["Python","Docker","Evolution API","AWS EC2","WhatsApp"],
+        note: "Private repository, being evaluated for commercialization"
+      },
+      {
+        icon: "fas fa-chart-line", kicker: "Analytics", title: "BI & productivity analysis",
+        subtitle: "Streamlit and Power BI",
+        blurb: "The analysis that surfaced 10,089 stalled leads and the conversion gap across reps.",
+        desc: "Operational dashboards in Streamlit and Power BI, plus the commercial productivity analysis that backed management decisions on the lead book.",
+        metrics: [ { figure: "10,089", label: "stalled leads identified" }, { figure: "0.6% – 6.6%", label: "conversion range across reps" } ],
+        blocks: [
+          { label: "What the analysis showed", items: [
+            "10,089 leads with no movement at all, sitting idle in the book",
+            "Conversion ranging from 0.6% to 6.6% across reps working the same kind of lead",
+            "A basis for redistributing the book and prioritizing leads with a real chance of closing"
+          ] }
+        ],
+        stack: ["Streamlit","Power BI","DAX","Python","SQL"],
+        dashboards: [
+          { img: "media/analise_uber.png", title: "Uber Performance", desc: "Complete analysis of Uber performance, including trip metrics, revenue, operational efficiency and business insights for strategy optimization.", url: "https://app.fabric.microsoft.com/view?r=eyJrIjoiMjYwMDRlZDAtMGRkYy00M2YwLTk0NTAtOTljZmQxMjNlY2NiIiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" },
+          { img: "media/analise_gov.png", title: "Seasonality Analysis in Brazil", desc: "Interactive dashboard analyzing seasonal patterns and temporal trends in Brazilian data. Strategic insights with dynamic filters and regional drill-down.", url: "https://app.fabric.microsoft.com/view?r=eyJrIjoiMWYwN2Q1OTktZTlhMS00NjFmLThjNmMtNWEyODQwNjRhNDI3IiwidCI6IjBhMWY3OWE4LWNiMDAtNDUxYi04YTYzLTY2YzgyZGU2ZTc5NiJ9" }
+        ]
+      }
+    ],
+    skills: [
+      { title: "Data Engineering", items: [["fab fa-python","Python"],["fas fa-database","BigQuery"],["fas fa-server","Postgres"],["fas fa-exchange-alt","ETL"],["fas fa-code","SQL"],["fab fa-docker","Docker"]] },
+      { title: "Cloud & Infrastructure", items: [["fab fa-google","Google Cloud"],["fab fa-aws","AWS EC2"],["fab fa-git-alt","Git"],["fas fa-terminal","Linux"]] },
+      { title: "Analytics & BI", items: [["fas fa-chart-line","Streamlit"],["fas fa-chart-bar","Power BI"],["fas fa-table","DAX"],["fas fa-layer-group","Next.js"]] }
+    ]
+  }
+};
 
-    i18next.init({
-      resources: resources,
-      lng: 'pt',
-      fallbackLng: 'pt',
-      debug: false
-    });
+class Component extends DCLogic {
+  state = { lang: "pt", activeIndex: null, typed: "", wi: 0, ci: 0, del: false, cookieVisible: false };
 
-    const cvDownloadLink = document.getElementById('cv-download-link');
-    const curriculo_pt = "media/LEONARDO MESQUITA - ENGENHEIRO DE DADOS.pdf";
-    const curriculo_en = "media/LEONARDO MESQUITA -DATA ENGINEER.pdf";
+  componentDidMount() {
+    this.tick();
+    try {
+      if (!localStorage.getItem('cookieConsent')) {
+        this.cookieTimer = setTimeout(() => this.setState({ cookieVisible: true }), 1200);
+      }
+    } catch (e) {}
+  }
+  componentWillUnmount() { clearTimeout(this.timer); clearTimeout(this.cookieTimer); }
 
-    function updateContent() {
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        element.textContent = i18next.t(key);
-      });
-    }
-
-    function updateCvLink(lang) {
-      cvDownloadLink.setAttribute('href', lang === 'en' ? curriculo_en : curriculo_pt);
-    }
-
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    // Card buttons → modals
-    const modals = ['dp-modal', 'fl-modal', 'bi-modal'];
-    document.querySelectorAll('.card-btn').forEach((btn, i) => {
-      btn.addEventListener('click', () => openModal(modals[i]));
-    });
-
-    // Close buttons
-    document.querySelectorAll('.carrossel-close').forEach(btn => {
-      btn.addEventListener('click', () => {
-        modals.forEach(id => closeModal(id));
-      });
-    });
-
-    // Click outside modal
-    modals.forEach(id => {
-      document.getElementById(id).addEventListener('click', (e) => {
-        if (e.target === document.getElementById(id)) closeModal(id);
-      });
-    });
-
-    // Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modals.forEach(id => closeModal(id));
-    });
-
-    // Language toggle
-    const langToggle = document.getElementById('langToggle');
-    let currentLang = localStorage.getItem('preferredLanguage') || 'pt';
-
-    if (currentLang === 'en') {
-      langToggle.classList.add('en');
-      i18next.changeLanguage('en');
-    }
-
-    updateCvLink(currentLang);
-    updateContent();
-
-    langToggle.addEventListener('click', () => {
-      currentLang = currentLang === 'pt' ? 'en' : 'pt';
-      langToggle.classList.toggle('en');
-      localStorage.setItem('preferredLanguage', currentLang);
-      i18next.changeLanguage(currentLang);
-      updateContent();
-      updateCvLink(currentLang);
-    });
-
-    // Cookie consent
-    const cookieBanner = document.getElementById('cookie-banner');
-    if (!localStorage.getItem('cookieConsent')) {
-      setTimeout(() => { cookieBanner.style.display = 'flex'; }, 1200);
-    }
-
-    document.getElementById('cookieAccept').addEventListener('click', () => {
+  acceptCookies = () => {
+    try {
       localStorage.setItem('cookieConsent', 'accepted');
-      gtag('consent', 'update', { 'analytics_storage': 'granted' });
-      cookieBanner.style.animation = 'slideDown 0.3s ease forwards';
-      setTimeout(() => { cookieBanner.style.display = 'none'; }, 300);
-    });
+      if (window.gtag) window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    } catch (e) {}
+    this.setState({ cookieVisible: false });
+  };
 
-    document.getElementById('cookieDecline').addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'declined');
-      cookieBanner.style.animation = 'slideDown 0.3s ease forwards';
-      setTimeout(() => { cookieBanner.style.display = 'none'; }, 300);
-    });
-  </script>
+  declineCookies = () => {
+    try { localStorage.setItem('cookieConsent', 'declined'); } catch (e) {}
+    this.setState({ cookieVisible: false });
+  };
 
+  tick = () => {
+    const words = DICT[this.state.lang].typed;
+    const w = words[this.state.wi % words.length];
+    let { ci, del } = this.state;
+    ci = del ? ci - 1 : ci + 1;
+    let delay = del ? 55 : 95;
+    let wi = this.state.wi;
+    if (!del && ci === w.length) { delay = 1800; del = true; }
+    else if (del && ci === 0) { del = false; wi = wi + 1; delay = 280; }
+    this.setState({ ci, del, wi, typed: w.substring(0, ci) });
+    this.timer = setTimeout(this.tick, delay);
+  };
+
+  renderVals() {
+    const lang = this.state.lang;
+    const d = DICT[lang];
+    const ai = this.state.activeIndex;
+    const raw = ai == null ? null : d.cases[ai];
+    const active = raw ? {
+      ...raw,
+      metrics: raw.metrics || [],
+      hasMetrics: !!(raw.metrics && raw.metrics.length),
+      dashboards: raw.dashboards || [],
+      hasDashboards: !!(raw.dashboards && raw.dashboards.length),
+      blocks: raw.blocks || [],
+      note: raw.note || null
+    } : null;
+
+    return {
+      t: d,
+      typed: this.state.typed,
+      cvHref: lang === "en" ? CV_EN : CV_PT,
+      toggleLang: () => this.setState({ lang: lang === "pt" ? "en" : "pt", ci: 0, del: false, typed: "" }),
+      nav: d.nav.map(n => ({ href: n[0], label: n[1] })),
+      heroChips: d.heroChips,
+      metrics: d.metrics,
+      jobs: d.jobs,
+      skills: d.skills.map(g => ({ title: g.title, items: g.items.map(i => ({ icon: i[0], name: i[1] })) })),
+      social: [
+        { href: "mailto:contatoleonaardo@gmail.com", icon: "fas fa-envelope", label: "Email" },
+        { href: "https://github.com/SrMesquitaa", icon: "fab fa-github", label: "GitHub" },
+        { href: "https://www.linkedin.com/in/leonardo-mesquitaa/", icon: "fab fa-linkedin", label: "LinkedIn" }
+      ],
+      cases: d.cases.map((c, i) => ({ ...c, open: () => this.setState({ activeIndex: i }) })),
+      active,
+      close: () => this.setState({ activeIndex: null }),
+      closeOnBackdrop: (e) => { if (!e.target.closest("[data-modal]")) this.setState({ activeIndex: null }); },
+      cookieVisible: this.state.cookieVisible,
+      acceptCookies: this.acceptCookies,
+      declineCookies: this.declineCookies
+    };
+  }
+}
+
+</script>
 </body>
-
 </html>
