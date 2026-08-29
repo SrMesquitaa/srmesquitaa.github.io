@@ -223,6 +223,34 @@
   </div>
 </section>
 
+<section id="linkedin" style="padding: 90px 24px; background: #f9fafb; scroll-margin-top: 64px;">
+  <div style="max-width: 1060px; margin: 0 auto;">
+    <div style="text-align: center;">
+      <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.linkedinTitle }}</h2>
+      <div style="width: 44px; height: 3px; background: #6366f1; margin: 14px auto 12px; border-radius: 2px;"></div>
+      <p style="color: #6b7280; font-size: 0.95rem; margin: 0;">{{ t.linkedinSub }}</p>
+    </div>
+    <div style="max-width: 520px; margin: 44px auto 0;">
+      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <span style="width: 36px; height: 36px; border-radius: 10px; background: #eef2ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-size: 1rem;"><i class="fas fa-star"></i></span>
+          <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #9ca3af;">{{ t.linkedinBest }}</span>
+        </div>
+        <div style="position: relative;">
+          <div style="width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 14px; max-height: {{ linkedinBest.maxHeight }}; transition: max-height 0.45s ease;">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7458601113085292545" height="1950" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada" style="width: 100%; max-width: 504px; border: none;"></iframe>
+          </div>
+          <sc-if value="{{ linkedinBest.showFade }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff); pointer-events: none; border-radius: 0 0 14px 14px;"></div>
+          </sc-if>
+        </div>
+        <button onClick="{{ linkedinBest.toggle }}" style="margin-top: 14px; width: 100%; text-align: center; font-family: 'Roboto', sans-serif; background: #eef2ff; border: none; color: #4f46e5; font-size: 0.85rem; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 7px;" style-hover="background: #e0e7ff;">{{ linkedinBest.label }} <i class="{{ linkedinBest.icon }}" style="font-size: 0.7rem;"></i></button>
+      </div>
+      <a href="https://www.linkedin.com/in/leonardo-mesquitaa/" target="_blank" rel="noopener" style="margin-top: 18px; width: 100%; box-sizing: border-box; text-align: center; font-family: 'Roboto', sans-serif; background: #4f46e5; color: #fff; font-size: 0.92rem; font-weight: 600; padding: 13px 20px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; transition: background 0.2s ease;" style-hover="background: #4338ca; color: #fff;"><i class="fab fa-linkedin"></i>{{ t.linkedinVisitProfile }}</a>
+    </div>
+  </div>
+</section>
+
 <section id="contato" style="padding: 90px 24px; background: #f9fafb; scroll-margin-top: 64px;">
   <div style="max-width: 720px; margin: 0 auto; text-align: center;">
     <h2 style="font-family: 'Coolvetica', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #111827; margin: 0; font-weight: 400; letter-spacing: -0.3px;">{{ t.contactTitle }}</h2>
@@ -331,7 +359,7 @@ const DICT = {
   pt: {
     langSwitch: "EN", cv: "Baixar CV", seeMore: "Ver detalhes", seeDashboard: "Ver dashboard",
     rights: "Todos os direitos reservados.",
-    nav: [["#sobre","Sobre"],["#experiencia","Experiência"],["#projetos","Projetos"],["#skills","Skills"],["#contato","Contato"]],
+    nav: [["#sobre","Sobre"],["#experiencia","Experiência"],["#projetos","Projetos"],["#skills","Skills"],["#linkedin","LinkedIn"],["#contato","Contato"]],
     greeting: "Olá, eu sou",
     typed: ["Engenheiro de Dados", "Python & BigQuery", "Pipelines ETL em produção", "Self-taught Builder"],
     heroPitch: "Construo e mantenho a infraestrutura de dados de uma operação de vendas em produção, do ingest ao dashboard. Diagnostico o que está caro, quebrado ou lento, e conserto.",
@@ -375,6 +403,10 @@ const DICT = {
     eduTitle: "Formação", eduCourse: "Superior de Tecnologia em Cibersegurança", eduSchool: "Universidade Cruzeiro do Sul · 2026 - 2028 (em andamento)",
     langTitle: "Idiomas", langBody: "Português nativo. Inglês avançado: leitura de documentação técnica e comunicação profissional.",
     projTitle: "Projetos", projSub: "Cinco entregas em produção. Clique para ver problema, ação e resultado.",
+    linkedinTitle: "LinkedIn", linkedinSub: "O que eu tenho compartilhado sobre dados, engenharia e os bastidores do que construo.",
+    linkedinBest: "Publicação em destaque",
+    linkedinSeeMore: "Ver publicação completa", linkedinSeeLess: "Ver menos",
+    linkedinVisitProfile: "Visitar meu perfil no LinkedIn",
     skillsTitle: "Habilidades",
     contactTitle: "Contato",
     contactSub: "Aberto a posições remotas de Data Engineer. Respondo em até 24h.",
@@ -484,7 +516,7 @@ const DICT = {
   en: {
     langSwitch: "PT", cv: "Download CV", seeMore: "See details", seeDashboard: "Open dashboard",
     rights: "All rights reserved.",
-    nav: [["#sobre","About"],["#experiencia","Experience"],["#projetos","Projects"],["#skills","Skills"],["#contato","Contact"]],
+    nav: [["#sobre","About"],["#experiencia","Experience"],["#projetos","Projects"],["#skills","Skills"],["#linkedin","LinkedIn"],["#contato","Contact"]],
     greeting: "Hi, I'm",
     typed: ["Data Engineer", "Python & BigQuery", "ETL pipelines in production", "Self-taught Builder"],
     heroPitch: "I build and run the data infrastructure behind a live sales operation, from ingestion to dashboard. I find what is expensive, broken or slow, and fix it.",
@@ -528,6 +560,10 @@ const DICT = {
     eduTitle: "Education", eduCourse: "BSc Technology in Cybersecurity", eduSchool: "Universidade Cruzeiro do Sul · 2026 - 2028 (in progress)",
     langTitle: "Languages", langBody: "Portuguese native. English advanced: technical documentation and professional communication.",
     projTitle: "Projects", projSub: "Five things running in production. Open one for problem, action and result.",
+    linkedinTitle: "LinkedIn", linkedinSub: "What I've been sharing about data, engineering and the behind-the-scenes of what I build.",
+    linkedinBest: "Featured post",
+    linkedinSeeMore: "See full post", linkedinSeeLess: "See less",
+    linkedinVisitProfile: "Visit my LinkedIn profile",
     skillsTitle: "Skills",
     contactTitle: "Contact",
     contactSub: "Open to remote Data Engineer roles. I reply within 24 hours.",
@@ -637,7 +673,7 @@ const DICT = {
 };
 
 class Component extends DCLogic {
-  state = { lang: "pt", activeIndex: null, typed: "", wi: 0, ci: 0, del: false, cookieVisible: false, mobileMenuOpen: false, activeSection: "inicio" };
+  state = { lang: "pt", activeIndex: null, typed: "", wi: 0, ci: 0, del: false, cookieVisible: false, mobileMenuOpen: false, activeSection: "inicio", linkedinBestOpen: false };
 
   componentDidMount() {
     this.tick();
@@ -646,7 +682,7 @@ class Component extends DCLogic {
         this.cookieTimer = setTimeout(() => this.setState({ cookieVisible: true }), 1200);
       }
     } catch (e) {}
-    this.sectionIds = ["inicio", "sobre", "experiencia", "projetos", "skills", "contato"];
+    this.sectionIds = ["inicio", "sobre", "experiencia", "projetos", "skills", "linkedin", "contato"];
     this.onScroll = () => {
       const y = window.scrollY + 96;
       let current = this.sectionIds[0];
@@ -667,6 +703,8 @@ class Component extends DCLogic {
 
   toggleMobileMenu = () => this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
   closeMobileMenu = () => this.setState({ mobileMenuOpen: false });
+
+  toggleLinkedinBest = () => this.setState({ linkedinBestOpen: !this.state.linkedinBestOpen });
 
   acceptCookies = () => {
     try {
@@ -745,7 +783,14 @@ class Component extends DCLogic {
       closeOnBackdrop: (e) => { if (!e.target.closest("[data-modal]")) this.setState({ activeIndex: null }); },
       cookieVisible: this.state.cookieVisible,
       acceptCookies: this.acceptCookies,
-      declineCookies: this.declineCookies
+      declineCookies: this.declineCookies,
+      linkedinBest: {
+        maxHeight: this.state.linkedinBestOpen ? "1950px" : "420px",
+        showFade: !this.state.linkedinBestOpen,
+        label: this.state.linkedinBestOpen ? d.linkedinSeeLess : d.linkedinSeeMore,
+        icon: this.state.linkedinBestOpen ? "fas fa-chevron-up" : "fas fa-chevron-down",
+        toggle: this.toggleLinkedinBest
+      }
     };
   }
 }
