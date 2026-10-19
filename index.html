@@ -249,15 +249,27 @@
           <span style="width: 36px; height: 36px; border-radius: 10px; background: #eef2ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-size: 1rem;"><i class="fas fa-star"></i></span>
           <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #9ca3af;">{{ t.linkedinBest }}</span>
         </div>
-        <div style="position: relative;">
-          <div style="width: 100%; display: flex; justify-content: center; overflow: hidden; border-radius: 14px; max-height: {{ linkedinBest.maxHeight }}; transition: max-height 0.45s ease;">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7458601113085292545" height="1950" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada" style="width: 100%; max-width: 504px; border: none;"></iframe>
+        <div style="border-top: 1px solid #e5e7eb; padding-top: 14px;">
+          <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+            <img src="media/LM.jpeg" alt="Leonardo Mesquita" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" />
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-weight: 700; color: #111827; font-size: 0.95rem;">Leonardo Mesquita</div>
+              <div style="color: #6b7280; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Analytics Engineer · Data &amp; Automation · E...</div>
+              <div style="color: #9ca3af; font-size: 0.75rem;">5mo</div>
+            </div>
+            <i class="fab fa-linkedin" style="color: #0a66c2; font-size: 1.5rem; flex-shrink: 0;"></i>
           </div>
-          <sc-if value="{{ linkedinBest.showFade }}" hint-placeholder-val="{{ false }}">
-            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff); pointer-events: none; border-radius: 0 0 14px 14px;"></div>
-          </sc-if>
+          <div style="position: relative;">
+            <div style="max-height: 260px; overflow: hidden; color: #374151; font-size: 0.88rem; line-height: 1.55; white-space: pre-line;">Em 6 meses de empresa, migrei toda a infraestrutura de dados do Google Sheets pro BigQuery, com apenas 1 hora de janela de manutenção programada, sozinho, sem time. E de brinde, ainda criei um sistema web de registro de vendas com controle de usuários via Clerk, hospedagem de formulário no Vercel e, o melhor de tudo: custo ZERO.
+Aqui um breve resumo do processo (que foi longo).
+
+🔴 O problema:
+
+A empresa tinha um projeto com menos de 6 meses de idade, e a quantidade de dados já havia atingido 80% da capacidade de células do Google Sheets. Mais de 90 mil linhas de informações crescendo 24/7, fórmulas quebrando dados, colunas sendo apagadas por engano, Ctrl A e Ctrl V por cima de tudo, acessos liberados para ex-membros da empresa, entre outros furos.</div>
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff); pointer-events: none;"></div>
+          </div>
         </div>
-        <button onClick="{{ linkedinBest.toggle }}" style="margin-top: 14px; width: 100%; text-align: center; font-family: 'Roboto', sans-serif; background: #eef2ff; border: none; color: #4f46e5; font-size: 0.85rem; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 7px;" style-hover="background: #e0e7ff;">{{ linkedinBest.label }} <i class="{{ linkedinBest.icon }}" style="font-size: 0.7rem;"></i></button>
+        <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7458601113085292545/" target="_blank" rel="noopener" style="margin-top: 14px; width: 100%; box-sizing: border-box; text-align: center; font-family: 'Roboto', sans-serif; background: #eef2ff; border: none; color: #4f46e5; font-size: 0.85rem; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 7px;" style-hover="background: #e0e7ff;">{{ t.linkedinSeeMore }} <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
       </div>
       <a href="https://www.linkedin.com/in/leonardo-mesquitaa/" target="_blank" rel="noopener" style="margin-top: 18px; width: 100%; box-sizing: border-box; text-align: center; font-family: 'Roboto', sans-serif; background: #4f46e5; color: #fff; font-size: 0.92rem; font-weight: 600; padding: 13px 20px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; transition: background 0.2s ease;" style-hover="background: #4338ca; color: #fff;"><i class="fab fa-linkedin"></i>{{ t.linkedinVisitProfile }}</a>
     </div>
