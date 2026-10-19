@@ -260,12 +260,7 @@
             <i class="fab fa-linkedin" style="color: #0a66c2; font-size: 1.5rem; flex-shrink: 0;"></i>
           </div>
           <div style="position: relative;">
-            <div style="max-height: 260px; overflow: hidden; color: #374151; font-size: 0.88rem; line-height: 1.55; white-space: pre-line;">Em 6 meses de empresa, migrei toda a infraestrutura de dados do Google Sheets pro BigQuery, com apenas 1 hora de janela de manutenção programada, sozinho, sem time. E de brinde, ainda criei um sistema web de registro de vendas com controle de usuários via Clerk, hospedagem de formulário no Vercel e, o melhor de tudo: custo ZERO.
-Aqui um breve resumo do processo (que foi longo).
-
-🔴 O problema:
-
-A empresa tinha um projeto com menos de 6 meses de idade, e a quantidade de dados já havia atingido 80% da capacidade de células do Google Sheets. Mais de 90 mil linhas de informações crescendo 24/7, fórmulas quebrando dados, colunas sendo apagadas por engano, Ctrl A e Ctrl V por cima de tudo, acessos liberados para ex-membros da empresa, entre outros furos.</div>
+            <div style="max-height: 260px; overflow: hidden; color: #374151; font-size: 0.88rem; line-height: 1.55; white-space: pre-line;">{{ t.linkedinCaption }}</div>
             <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff); pointer-events: none;"></div>
           </div>
         </div>
@@ -432,6 +427,12 @@ const DICT = {
     linkedinBest: "Publicação em destaque",
     linkedinSeeMore: "Ver publicação completa", linkedinSeeLess: "Ver menos",
     linkedinVisitProfile: "Visitar meu perfil no LinkedIn",
+    linkedinCaption: `Em 6 meses de empresa, migrei toda a infraestrutura de dados do Google Sheets pro BigQuery, com apenas 1 hora de janela de manutenção programada, sozinho, sem time. E de brinde, ainda criei um sistema web de registro de vendas com controle de usuários via Clerk, hospedagem de formulário no Vercel e, o melhor de tudo: custo ZERO.
+Aqui um breve resumo do processo (que foi longo).
+
+🔴 O problema:
+
+A empresa tinha um projeto com menos de 6 meses de idade, e a quantidade de dados já havia atingido 80% da capacidade de células do Google Sheets. Mais de 90 mil linhas de informações crescendo 24/7, fórmulas quebrando dados, colunas sendo apagadas por engano, Ctrl A e Ctrl V por cima de tudo, acessos liberados para ex-membros da empresa, entre outros furos.`,
     skillsTitle: "Habilidades",
     contactTitle: "Contato",
     contactSub: "Aberto a posições remotas de Data Engineer. Respondo em até 24h.",
@@ -589,6 +590,12 @@ const DICT = {
     linkedinBest: "Featured post",
     linkedinSeeMore: "See full post", linkedinSeeLess: "See less",
     linkedinVisitProfile: "Visit my LinkedIn profile",
+    linkedinCaption: `In 6 months at the company, I migrated the entire data infrastructure from Google Sheets to BigQuery, with just 1 hour of scheduled maintenance downtime, solo, with no team. As a bonus, I also built a web-based sales registration system with user management via Clerk, form hosting on Vercel, and best of all: zero cost.
+Here's a short recap of the process (which was a long one).
+
+🔴 The problem:
+
+The company had a project less than 6 months old, and the data had already reached 80% of Google Sheets' cell capacity. Over 90 thousand rows of data growing 24/7, formulas breaking, columns accidentally deleted, Ctrl+A and Ctrl+V pasted over everything, access still open to former employees, among other gaps.`,
     skillsTitle: "Skills",
     contactTitle: "Contact",
     contactSub: "Open to remote Data Engineer roles. I reply within 24 hours.",
